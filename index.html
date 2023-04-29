@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Meta data -->
     <meta charset="UTF-8">
@@ -16,20 +15,28 @@
     <!-- Page title for browser tab -->
     <title>Guess The Rainbow</title>
 </head>
-
 <body>
     <header>
-        <section id="logo"></section>
+        <section id="logo">
+            <img src="assets/images/logo.webp" alt="Rainbow logo">
+            <h1>Guess The Rainbow</h1>
+        </section>
     </header>
-    <section id="question"></section>
+    <section id="question">
+        <div>
+            <p><span>colour</span><i class="fas fa-plus"></i><span>colour</span></p>
+        </div>
+    </section>
     <section id="options"></section>
-    <section id="answer"></section>
-    <section id="score"></section>
-
+    <section id="answer">
+        <div></div>
+    </section>
+    <section id="score">
+        <p>Score: <span>0</span> / <span>0</span></p>
+    </section>
     <!-- Font Awesome embed code -->
     <script src="https://kit.fontawesome.com/8e292ce701.js" crossorigin="anonymous"></script>
     <!-- Link to javascript file -->
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>
