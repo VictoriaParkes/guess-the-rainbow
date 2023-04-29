@@ -62,3 +62,51 @@ img {
     border: 1px solid black;
     padding: 30px;
 }
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.l-blue {
+    background-color: lightblue;
+}
+
+.l-yellow {
+    background-color: #ffffa6;
+}
+
+.d-red {
+    background-color: darkred;
+}
+
+.d-blue {
+    background-color: darkblue;
+}
+
+.d-yellow {
+    background-color: #808000;
+}
