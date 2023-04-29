@@ -8,6 +8,7 @@ height and width */
     box-sizing: border-box;
 }
 
+/* Style rule to centre all page content with equal margins on left and right */
 body {
     width: 85%;
     margin-left: auto;
@@ -15,14 +16,19 @@ body {
     text-align: center;
 }
 
+/* HEADER */
+/* Style rule to set size of logo image */
 img {
     max-width: 30%;
 }
 
+/* QUESTION */
+/* Style rule to set font-size of plus symbol */
 #question {
     font-size: 3rem;
 }
 
+/* Style rule to set width and height of question span elements and add margins and border */
 #question span {
     display: inline-block;
     margin: 5px;
@@ -31,9 +37,24 @@ img {
     border: 1px solid black;
 }
 
+/* ANSWER */
+/* Style rule to centre and size answer div element and add border */
 #answer div {
     margin: auto;
     width: 50px;
     height: 50px;
     border: 1px solid black;
+}
+
+/* OPTIONS */
+/* Style rule to create grid with three equal columns */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* Style rule to add border to each grid section and padding to size sections */
+.grid-item {
+    border: 1px solid black;
+    padding: 30px;
 }
