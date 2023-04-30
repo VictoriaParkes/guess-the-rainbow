@@ -11,12 +11,34 @@ document.addEventListener("DOMContentLoaded", function () {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
+        runGame(currentQuestion);
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            runGame(currentQuestion);
         }
     }
 });
+
+let currentQuestion = 0;
+
+function displayQuestion() {
+    let q = currentQuestion;
+    let firstColour = document.getElementById("first-colour");
+    let secondColour = document.getElementById("second-colour");
+
+    if (currentQuestion === 0) {
+        firstColour.style.backgroundColor = 'red';
+        secondColour.style.backgroundColor = 'blue';
+    } else {
+        alert(`An error has occured`);
+        throw `An error has occured. Aborting!`;
+    }
+}
+
+function runGame() {
+    displayQuestion(currentQuestion);
+}
