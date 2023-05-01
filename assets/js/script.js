@@ -23,10 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Add variable for question counter
 let currentQuestion = 0;
 
+// 
 function displayQuestion() {
-    let q = currentQuestion;
+    // let q = currentQuestion;
     let firstColour = document.getElementById("first-colour");
     let secondColour = document.getElementById("second-colour");
 
@@ -41,4 +43,14 @@ function displayQuestion() {
 
 function runGame() {
     displayQuestion(currentQuestion);
+}
+
+// Set answer span element background colour
+function userAnswerHandler(x) {
+    // Store clicked element style properties in variable
+    let optionStyle = getComputedStyle(x);
+    // Store background colour property in variable
+    let color = optionStyle.backgroundColor;
+    // Use color variable to set answer span background colour
+    document.getElementById("answer").style.backgroundColor = color;
 }
