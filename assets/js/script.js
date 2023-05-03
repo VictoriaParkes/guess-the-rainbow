@@ -31,14 +31,17 @@ function displayQuestion() {
     // let q = currentQuestion;
     let firstColour = document.getElementById("first-colour");
     let secondColour = document.getElementById("second-colour");
-
-    if (currentQuestion === 0) {
-        firstColour.style.backgroundColor = 'red';
-        secondColour.style.backgroundColor = 'blue';
-    } else {
-        alert(`An error has occured`);
-        throw `An error has occured. Aborting!`;
-    }
+    
+    let display = currentQuestion === 0 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'blue')
+        : currentQuestion === 1 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'white')
+        : currentQuestion === 2 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'yellow')
+        : currentQuestion === 3 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'white')
+        : currentQuestion === 4 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'black')
+        : currentQuestion === 5 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'yellow')
+        : currentQuestion === 6 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'black')
+        : currentQuestion === 7 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'black')
+        : currentQuestion === 8 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'white')
+        : error();
 }
 
 function runGame() {
