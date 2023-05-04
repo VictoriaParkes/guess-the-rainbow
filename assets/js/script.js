@@ -2,6 +2,18 @@
 // Modal code taken from https://www.w3schools.com/howto/howto_css_modals.asp
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("submit").addEventListener("click", function (event) {
+        checkAnswer();
+    });
+
+    document.getElementById("answer").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
+
+
     // Get the modal
     let modal = document.getElementById("instructions-modal");
     // Get the <span> element that closes the modal
@@ -31,7 +43,7 @@ function displayQuestion() {
     // let q = currentQuestion;
     let firstColour = document.getElementById("first-colour");
     let secondColour = document.getElementById("second-colour");
-    
+
     let display = currentQuestion === 0 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'blue')
         : currentQuestion === 1 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'white')
         : currentQuestion === 2 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'yellow')
@@ -56,4 +68,8 @@ function userAnswerHandler(x) {
     let color = optionStyle.backgroundColor;
     // Use color variable to set answer span background colour
     document.getElementById("answer").style.backgroundColor = color;
+}
+
+function checkAnswer() {
+    alert(`submit clicked`);
 }
