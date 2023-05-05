@@ -37,23 +37,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Add variable for question counter
 let currentQuestion = 0;
-
+let correctAnswer;
 // 
 function displayQuestion() {
     // let q = currentQuestion;
     let firstColour = document.getElementById("first-colour");
     let secondColour = document.getElementById("second-colour");
 
-    let display = currentQuestion === 0 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'blue')
+    let display = currentQuestion === 0 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'blue', correctAnswer = "rgb(128, 0, 128)")
         : currentQuestion === 1 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'white')
-        : currentQuestion === 2 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'yellow')
-        : currentQuestion === 3 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'white')
-        : currentQuestion === 4 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'black')
-        : currentQuestion === 5 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'yellow')
-        : currentQuestion === 6 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'black')
-        : currentQuestion === 7 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'black')
-        : currentQuestion === 8 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'white')
-        : error();
+            : currentQuestion === 2 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'yellow')
+                : currentQuestion === 3 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'white')
+                    : currentQuestion === 4 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'black')
+                        : currentQuestion === 5 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'yellow')
+                            : currentQuestion === 6 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'black')
+                                : currentQuestion === 7 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'black')
+                                    : currentQuestion === 8 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'white')
+                                        : error();
 }
 
 function runGame() {
@@ -71,5 +71,20 @@ function userAnswerHandler(x) {
 }
 
 function checkAnswer() {
-    alert(`submit clicked`);
+    let answerBox = document.getElementById("answer");
+    let answerStyle = window.getComputedStyle(answerBox, null);
+
+    let userAnswer = answerStyle.getPropertyValue("background-color");
+
+    console.log(userAnswer);
+
+    let answerCheck = userAnswer === correctAnswer;
+
+    if (answerCheck) {
+        alert(`correct`);
+    } else if (userAnswer === "rgba(0, 0, 0, 0)") {
+        alert(`Select a colour`);
+    } else {
+        alert(`incorrect`);
+    }
 }
