@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById("submit").addEventListener("click", function (event) {
+    document.getElementById("submit").addEventListener("click", function () {
         checkAnswer();
     });
 
@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach((gridItem) => {
+        gridItem.addEventListener("click", () => {
+            userAnswerHandler(gridItem);
+        })
+    });
 
     // Get the modal
     let modal = document.getElementById("instructions-modal");
@@ -61,9 +67,9 @@ function runGame() {
 }
 
 // Set answer span element background colour
-function userAnswerHandler(x) {
+function userAnswerHandler(gridItem) {
     // Store clicked element style properties in variable
-    let optionStyle = getComputedStyle(x);
+    let optionStyle = getComputedStyle(gridItem);
     // Store background colour property in variable
     let color = optionStyle.backgroundColor;
     // Use color variable to set answer span background colour
