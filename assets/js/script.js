@@ -44,22 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add variable for question counter
 let currentQuestion = 0;
 let correctAnswer;
+
+// Store questions and answer in an object using key-value pairs
+const questions = [
+    { firstColour: "red", secondColour: "blue", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "blue", secondColour: "white", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "blue", secondColour: "yellow", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "red", secondColour: "white", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "yellow", secondColour: "black", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "red", secondColour: "yellow", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "red", secondColour: "black", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "blue", secondColour: "black", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "yellow", secondColour: "white", correctAnswer: "rgb(128, 0, 128)" },
+]
+
 // 
 function displayQuestion() {
-    // let q = currentQuestion;
-    let firstColour = document.getElementById("first-colour");
-    let secondColour = document.getElementById("second-colour");
+    let firstColourBox = document.getElementById("first-colour");
+    let secondColourBox = document.getElementById("second-colour");
 
-    let display = currentQuestion === 0 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'blue', correctAnswer = "rgb(128, 0, 128)")
-        : currentQuestion === 1 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'white')
-            : currentQuestion === 2 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'yellow')
-                : currentQuestion === 3 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'white')
-                    : currentQuestion === 4 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'black')
-                        : currentQuestion === 5 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'yellow')
-                            : currentQuestion === 6 ? (firstColour.style.backgroundColor = 'red', secondColour.style.backgroundColor = 'black')
-                                : currentQuestion === 7 ? (firstColour.style.backgroundColor = 'blue', secondColour.style.backgroundColor = 'black')
-                                    : currentQuestion === 8 ? (firstColour.style.backgroundColor = 'yellow', secondColour.style.backgroundColor = 'white')
-                                        : error();
+    let question = questions[currentQuestion];
+    firstColourBox.style.backgroundColor = question.firstColour;
+    secondColourBox.style.backgroundColor = question.secondColour;
+    correctAnswer = question.correctAnswer;
 }
 
 function runGame() {
