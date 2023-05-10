@@ -48,14 +48,14 @@ let correctAnswer;
 // Store questions and answer in an object using key-value pairs
 const questions = [
     { firstColour: "red", secondColour: "blue", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "blue", secondColour: "white", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "blue", secondColour: "yellow", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "red", secondColour: "white", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "yellow", secondColour: "black", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "red", secondColour: "yellow", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "red", secondColour: "black", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "blue", secondColour: "black", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "yellow", secondColour: "white", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "blue", secondColour: "white", correctAnswer: "rgb(173, 216, 230)" },
+    { firstColour: "blue", secondColour: "yellow", correctAnswer: "rgb(0, 128, 0)" },
+    { firstColour: "red", secondColour: "white", correctAnswer: "rgb(255, 192, 203)" },
+    { firstColour: "yellow", secondColour: "black", correctAnswer: "rgb(128, 128, 0)" },
+    { firstColour: "red", secondColour: "yellow", correctAnswer: "rgb(255, 165, 0)" },
+    { firstColour: "red", secondColour: "black", correctAnswer: "rgb(139, 0, 0)" },
+    { firstColour: "blue", secondColour: "black", correctAnswer: "rgb(0, 0, 139)" },
+    { firstColour: "yellow", secondColour: "white", correctAnswer: "rgb(255, 255, 166)" },
 ]
 
 // 
