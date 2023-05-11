@@ -95,9 +95,15 @@ function checkAnswer() {
 
     if (answerCheck) {
         alert(`correct`);
+        incrementQuestion();
+        runGame(currentQuestion);
     } else if (userAnswer === "rgba(0, 0, 0, 0)") {
         alert(`Select a colour`);
     } else {
         alert(`incorrect`);
     }
+}
+
+function incrementQuestion() {
+    currentQuestion++;
 }
