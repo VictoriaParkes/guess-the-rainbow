@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add variable for question counter
 let currentQuestion = 0;
 let correctAnswer;
+let questionMark = document.getElementById("question-mark");
 
 // Store questions and answer in an object using key-value pairs
 const questions = [
@@ -67,6 +68,9 @@ function displayQuestion() {
     firstColourBox.style.backgroundColor = question.firstColour;
     secondColourBox.style.backgroundColor = question.secondColour;
     correctAnswer = question.correctAnswer;
+
+    document.getElementById("answer").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    questionMark.style.visibility = "visible";
 }
 
 function runGame() {
@@ -82,7 +86,6 @@ function userAnswerHandler(gridItem) {
     // Use color variable to set answer span background colour
     document.getElementById("answer").style.backgroundColor = color;
     // Hide question mark
-    let questionMark = document.getElementById("question-mark");
     questionMark.style.visibility = "hidden";
 }
 
