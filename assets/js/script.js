@@ -81,6 +81,9 @@ function userAnswerHandler(gridItem) {
     let color = optionStyle.backgroundColor;
     // Use color variable to set answer span background colour
     document.getElementById("answer").style.backgroundColor = color;
+    // Hide question mark
+    let questionMark = document.getElementById("question-mark");
+    questionMark.style.visibility = "hidden";
 }
 
 function checkAnswer() {
