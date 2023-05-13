@@ -27,7 +27,9 @@
     <section id="question">
         <div>
             <p>
-                <span id="first-colour"></span><i class="fas fa-plus"></i><span id="second-colour"></span><i class="fas fa-equals"></i><span id="answer"><i id="question-mark" class="fas fa-question"></i></span>
+                <span id="first-colour"></span><i class="fas fa-plus"></i><span id="second-colour"></span><i
+                    class="fas fa-equals"></i><span id="answer"><i id="question-mark"
+                        class="fas fa-question"></i></span>
             </p>
         </div>
         <button id="submit" data-type="submit" class="btn">Submit Answer</button>
@@ -73,6 +75,60 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+    <section id="correct">
+        <div id="correct-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Congratulations</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Correct!</p>
+                    <p>You got the right answer!</p>
+                </div>
+                <div class="modal-footer">
+                    <h3>Move on to the next question</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="select">
+        <div id="select-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Selct an Answer</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Answer the question to continue</p>
+                    <p>Selct a colour to answer the question</p>
+                </div>
+                <div class="modal-footer">
+                    <h3>Try again</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="incorrect">
+        <div id="incorrect-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Sorry</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Incorrect</p>
+                    <p>That's not the right answer</p>
+                </div>
+                <div class="modal-footer">
+                    <h3>Move on to the next question</h3>
+                </div>
+            </div>
         </div>
     </section>
 
