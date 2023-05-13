@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
             runGame(currentQuestion);
         }
@@ -108,17 +108,17 @@ function checkAnswer() {
         // When the user clicks on <span> (x), close the modal
         close.onclick = function () {
             correctModal.style.display = "none";
+            incrementQuestion();
             runGame(currentQuestion);
         }
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target === correctModal) {
                 correctModal.style.display = "none";
+                incrementQuestion();
                 runGame(currentQuestion);
             }
         }
-        incrementQuestion();
-        runGame(currentQuestion);
     } else if (userAnswer === "rgba(0, 0, 0, 0)") {
         // Get the modal
         let selectModal = document.getElementById("select-modal");
@@ -129,13 +129,11 @@ function checkAnswer() {
         // When the user clicks on <span> (x), close the modal
         close.onclick = function () {
             selectModal.style.display = "none";
-            runGame(currentQuestion);
         }
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target === selectModal) {
                 selectModal.style.display = "none";
-                runGame(currentQuestion);
             }
         }
     } else {
@@ -148,15 +146,18 @@ function checkAnswer() {
         // When the user clicks on <span> (x), close the modal
         close.onclick = function () {
             incorrectModal.style.display = "none";
+            incrementQuestion();
             runGame(currentQuestion);
         }
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target === incorrectModal) {
                 incorrectModal.style.display = "none";
+                incrementQuestion();
                 runGame(currentQuestion);
             }
         }
+
     }
 }
 
