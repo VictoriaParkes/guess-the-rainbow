@@ -39,14 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
             runGame(currentQuestion);
         }
     }
+
+    document.getElementById("current-score").innerHTML = score;
+
+    document.getElementById("questions-answered").innerHTML = questionsAnswered;
 });
 
 // Add variable for question counter
 let currentQuestion = 0;
 let correctAnswer;
 let questionMark = document.getElementById("question-mark");
+let score = 0;
+let questionsAnswered = 0;
 
-// Store questions and answer in an object using key-value pairs
 const questions = [
     { firstColour: "red", secondColour: "blue", correctAnswer: "rgb(128, 0, 128)" },
     { firstColour: "blue", secondColour: "white", correctAnswer: "rgb(173, 216, 230)" },
@@ -108,6 +113,8 @@ function checkAnswer() {
         // When the user clicks on <span> (x), close the modal
         close.onclick = function () {
             correctModal.style.display = "none";
+            increaseScore();
+            increaseQuestionsAnswered();
             incrementQuestion();
             runGame(currentQuestion);
         }
@@ -115,6 +122,8 @@ function checkAnswer() {
         window.onclick = function (event) {
             if (event.target === correctModal) {
                 correctModal.style.display = "none";
+                increaseScore();
+                increaseQuestionsAnswered();
                 incrementQuestion();
                 runGame(currentQuestion);
             }
@@ -147,6 +156,7 @@ function checkAnswer() {
         close.onclick = function () {
             incorrectModal.style.display = "none";
             incrementQuestion();
+            increaseQuestionsAnswered();
             runGame(currentQuestion);
         }
         // When the user clicks anywhere outside of the modal, close it
@@ -154,13 +164,23 @@ function checkAnswer() {
             if (event.target === incorrectModal) {
                 incorrectModal.style.display = "none";
                 incrementQuestion();
+                increaseQuestionsAnswered();
                 runGame(currentQuestion);
             }
         }
-
     }
 }
 
 function incrementQuestion() {
     currentQuestion++;
+}
+
+function increaseScore() {
+    score++;
+    document.getElementById("current-score").innerHTML = score;
+}
+
+function increaseQuestionsAnswered() {
+    questionsAnswered++;
+    document.getElementById("questions-answered").innerHTML = questionsAnswered;
 }
