@@ -20,31 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    // Get the modal
-    let modal = document.getElementById("instructions-modal");
-    // Get the <span> element that closes the modal
-    let span = document.getElementsByClassName("close")[0];
-    // Display the modal
-    modal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-        runGame(currentQuestion);
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-            runGame(currentQuestion);
-        }
-    }
+    document.getElementById("instructions-btn").addEventListener("click", function () {
+        instructions();
+    });
 
     // Set score
     document.getElementById("current-score").innerHTML = score;
 
     // Set questions answered
     document.getElementById("questions-answered").innerHTML = questionsAnswered;
+
+    runGame(currentQuestion);
 });
 
 // Add variable for question counter
@@ -205,4 +191,24 @@ function increaseScore() {
 function increaseQuestionsAnswered() {
     questionsAnswered++;
     document.getElementById("questions-answered").innerHTML = questionsAnswered;
+}
+
+function instructions() {
+     // Get the modal
+     let modal = document.getElementById("instructions-modal");
+     // Get the <span> element that closes the modal
+     let span = document.getElementsByClassName("close")[0];
+     // Display the modal
+     modal.style.display = "block";
+     // When the user clicks on <span> (x), close the modal
+     span.onclick = function () {
+         modal.style.display = "none";
+     }
+ 
+     // When the user clicks anywhere outside of the modal, close it
+     window.onclick = function (event) {
+         if (event.target === modal) {
+             modal.style.display = "none";
+         }
+     }
 }
