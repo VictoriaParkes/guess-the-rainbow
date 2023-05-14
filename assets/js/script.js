@@ -1,4 +1,4 @@
-// Wait for DOM to finish loading before displaying the instructions modal
+// Wait for DOM to finish loading before adding event listeners and displaying the instructions modal
 // Modal code taken from https://www.w3schools.com/howto/howto_css_modals.asp
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -40,18 +40,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Set score
     document.getElementById("current-score").innerHTML = score;
 
+    // Set questions answered
     document.getElementById("questions-answered").innerHTML = questionsAnswered;
 });
 
 // Add variable for question counter
 let currentQuestion = 0;
+// Add variable for correct answer with no defined value
 let correctAnswer;
+// Get question mark html element
 let questionMark = document.getElementById("question-mark");
+// Add variable for score counter
 let score = 0;
+// Add variable for questions answered counter
 let questionsAnswered = 0;
 
+// Set questions and answers in an array using key value pairs
 const questions = [
     { firstColour: "red", secondColour: "blue", correctAnswer: "rgb(128, 0, 128)" },
     { firstColour: "blue", secondColour: "white", correctAnswer: "rgb(173, 216, 230)" },
@@ -64,7 +71,11 @@ const questions = [
     { firstColour: "yellow", secondColour: "white", correctAnswer: "rgb(255, 255, 166)" },
 ]
 
-// 
+/**
+ * Displays the current question, sets the correct answer
+ * and resets the style of the answer box to no colour with
+ * a question mark.
+*/
 function displayQuestion() {
     let firstColourBox = document.getElementById("first-colour");
     let secondColourBox = document.getElementById("second-colour");
@@ -94,6 +105,14 @@ function userAnswerHandler(gridItem) {
     questionMark.style.visibility = "hidden";
 }
 
+/**
+ * Checks if the user answer matches the correct answer and
+ * displays the appropriate message modal to inform the user.
+ * Increments the score, questions answered and current question
+ * if user answer is correct.
+ * Increments the questions answered and current question
+ * if user answer is incorrect.
+*/
 function checkAnswer() {
     let answerBox = document.getElementById("answer");
     let answerStyle = window.getComputedStyle(answerBox, null);
@@ -171,15 +190,18 @@ function checkAnswer() {
     }
 }
 
+// Increment the current question value by 1
 function incrementQuestion() {
     currentQuestion++;
 }
 
+// Increment the score value by 1
 function increaseScore() {
     score++;
     document.getElementById("current-score").innerHTML = score;
 }
 
+// Increment the questions answered by 1
 function increaseQuestionsAnswered() {
     questionsAnswered++;
     document.getElementById("questions-answered").innerHTML = questionsAnswered;
