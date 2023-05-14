@@ -24,11 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         instructions();
     });
 
-    // Set score
-    document.getElementById("current-score").innerHTML = score;
-
-    // Set questions answered
-    document.getElementById("questions-answered").innerHTML = questionsAnswered;
+    document.getElementById("reset-btn").addEventListener("click", function () {
+        reset();
+    });
 
     runGame(currentQuestion);
 });
@@ -77,6 +75,10 @@ function displayQuestion() {
 
 function runGame() {
     displayQuestion(currentQuestion);
+    // Set score
+    document.getElementById("current-score").innerHTML = score;
+    // Set questions answered
+    document.getElementById("questions-answered").innerHTML = questionsAnswered;
 }
 
 // Set answer span element background colour
@@ -223,4 +225,11 @@ function incorrect() {
             runGame(currentQuestion);
         }
     }
+}
+
+function reset() {
+    currentQuestion = 0;
+    score = 0;
+    questionsAnswered = 0;
+    runGame();
 }
