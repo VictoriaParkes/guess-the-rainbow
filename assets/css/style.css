@@ -48,6 +48,11 @@ img {
     margin-top: 3px;
 }
 
+.btn {
+    margin: 10px;
+    padding: 10px;
+}
+
 /* ANSWER */
 /* Style rule to centre and size answer div element and add border */
 /* #answer {
