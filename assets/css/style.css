@@ -18,36 +18,54 @@ body {
     margin-right: auto;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    color: #333e49
 }
 
 /* HEADER */
 /* Style rule to set size of logo image */
 img {
     max-width: 30%;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 /* QUESTION */
+
+#question {
+    margin: 20px;
+}
+
 /* Style rule to set font-size of plus symbol */
 #question p {
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 /* Style rule to set width and height of question span elements and add margins and border */
 #question span {
     display: inline-block;
     margin: 5px;
-    width: 4rem;
-    height: 4rem;
-    border: 1px solid black;
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid white;
+    outline: 3px solid #333e49;
     vertical-align: top;
 }
 
 .fa-question {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     vertical-align: text-top;
     margin-top: 3px;
 }
 
+/* SCORE */
+#score {
+    margin: 10px;
+}
+
+/* BUTTONS */
 .btn {
     margin: 10px;
     padding: 10px;
@@ -66,11 +84,13 @@ img {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
+    gap: 10px;
 }
 
 /* Style rule to add border to each grid section and padding to size sections */
 .grid-item {
-    border: 1px solid black;
+    border: 2px solid white;
+    outline: 3px solid #333e49;
     padding: 30px;
 }
 
