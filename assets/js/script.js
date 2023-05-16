@@ -1,4 +1,4 @@
-// Wait for DOM to finish loading before adding event listeners and displaying the instructions modal
+// Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
 // Modal code taken from https://www.w3schools.com/howto/howto_css_modals.asp
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         reset();
     });
 
-    runGame(currentQuestion);
+    welcome();
 });
 
 // Add variable for question counter
@@ -135,6 +135,28 @@ function increaseScore() {
 function increaseQuestionsAnswered() {
     questionsAnswered++;
     document.getElementById("questions-answered").innerHTML = questionsAnswered;
+}
+
+function welcome() {
+    // Get the modal
+    let welcomeModal = document.getElementById("welcome-modal");
+    // Get the <span> element that closes the modal
+    let close = document.getElementsByClassName("close")[0];
+    // Display the modal
+    welcomeModal.style.display = "block";
+    // When the user clicks on <span> (x), close the modal
+    close.onclick = function () {
+        welcomeModal.style.display = "none";
+        runGame(currentQuestion);
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === welcomeModal) {
+            welcomeModal.style.display = "none";
+            runGame(currentQuestion);
+        }
+    }
 }
 
 function instructions() {
