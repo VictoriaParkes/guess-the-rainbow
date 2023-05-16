@@ -69,6 +69,14 @@ h1 {
 .btn {
     margin: 10px;
     padding: 10px;
+    background-color: white;
+    border: 3px solid #333e49;
+    color: #333e49;
+}
+
+.btn:hover {
+    background-color: #333e49;
+    color: white;
 }
 
 /* ANSWER */
