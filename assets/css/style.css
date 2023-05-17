@@ -147,7 +147,7 @@ h1 {
 }
 
 /* HOVER TEXT */
-.colour-text {
+.question-colour-text, .colour-text {
     display: none;
     position: absolute;
     z-index: 1;
@@ -159,7 +159,7 @@ h1 {
     padding: 2px;
 }
 
-.box:hover .colour-text, .grid-item:hover .colour-text {
+.box:hover .question-colour-text, .grid-item:hover .colour-text {
     display: unset;
 }
 

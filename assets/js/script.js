@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
         reset();
     });
 
+    const questionBoxes = document.querySelectorAll(".box");
+    questionBoxes.forEach((box) => {
+        box.addEventListener("mouseover", mouseOver);
+    });
+
     welcome();
 });
 
@@ -160,23 +165,23 @@ function welcome() {
 }
 
 function instructions() {
-     // Get the modal
-     let modal = document.getElementById("instructions-modal");
-     // Get the <span> element that closes the modal
-     let span = document.getElementsByClassName("close")[0];
-     // Display the modal
-     modal.style.display = "block";
-     // When the user clicks on <span> (x), close the modal
-     span.onclick = function () {
-         modal.style.display = "none";
-     }
- 
-     // When the user clicks anywhere outside of the modal, close it
-     window.onclick = function (event) {
-         if (event.target === modal) {
-             modal.style.display = "none";
-         }
-     }
+    // Get the modal
+    let modal = document.getElementById("instructions-modal");
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+    // Display the modal
+    modal.style.display = "block";
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
 }
 
 function correct() {
@@ -254,4 +259,58 @@ function reset() {
     score = 0;
     questionsAnswered = 0;
     runGame();
+}
+
+function mouseOver() {
+    let boxStyle = window.getComputedStyle(this, null);
+    let boxColour = boxStyle.getPropertyValue("background-color");
+    console.log(boxColour);
+    let questionBoxSpan = document.querySelectorAll(".question-colour-text");
+    questionBoxSpan.forEach((span) => {
+        if (boxColour === "rgb(255, 0, 0)") {
+            span.innerHTML = "Red";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(0, 0, 255)") {
+            span.innerHTML = "Blue";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(255, 255, 0)") {
+            span.innerHTML = "Yellow";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(255, 255, 255)") {
+            span.innerHTML = "White";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(0, 0, 0)") {
+            span.innerHTML = "Black";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(255, 165, 0)") {
+            span.innerHTML = "Orange";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(0, 128, 0)") {
+            span.innerHTML = "Green";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(128, 0, 128)") {
+            span.innerHTML = "Purple";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(255, 192, 203)") {
+            span.innerHTML = "Pink";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(173, 216, 230)") {
+            span.innerHTML = "Light Blue";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(255, 255, 166)") {
+            span.innerHTML = "Light Yellow";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(139, 0, 0)") {
+            span.innerHTML = "Dark Red";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(0, 0, 139)") {
+            span.innerHTML = "Dark Blue";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgb(128, 128, 0)") {
+            span.innerHTML = "Dark Yellow";
+            span.style.visibility = "visible";
+        } else if (boxColour === "rgba(0, 0, 0, 0)") {
+            span.style.visibility = "hidden";
+        }
+    });
 }
