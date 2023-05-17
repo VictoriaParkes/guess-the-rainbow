@@ -39,19 +39,24 @@ h1 {
 }
 
 /* Style rule to set font-size of plus symbol */
-#question p {
+.question.container {
     font-size: 5rem;
 }
 
 /* Style rule to set width and height of question span elements and add margins and border */
-#question span {
+#first-colour, #second-colour, #answer {
     display: inline-block;
+    position: relative;
     margin: 5px;
     width: 5rem;
     height: 5rem;
     border: 2px solid white;
     outline: 3px solid #333e49;
     vertical-align: top;
+}
+
+.fas {
+    font-size: 5rem;
 }
 
 .fa-question {
@@ -141,7 +146,8 @@ h1 {
     background-color: #808000;
 }
 
-.grid-text {
+/* HOVER TEXT */
+.colour-text {
     display: none;
     position: absolute;
     z-index: 1;
@@ -153,7 +159,7 @@ h1 {
     padding: 2px;
 }
 
-.grid-item:hover .grid-text {
+.box:hover .colour-text, .grid-item:hover .colour-text {
     display: unset;
 }
 
