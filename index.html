@@ -18,12 +18,14 @@
 
 <body>
     <header>
+        <!-- Logo and game title -->
         <section id="logo">
             <img src="assets/images/logo.webp" alt="Rainbow logo">
             <h1>Guess The Rainbow</h1>
         </section>
     </header>
 
+    <!-- Question -->
     <section id="question">
         <div class="question-container">
             <div id="first-colour" class="box">
@@ -42,6 +44,7 @@
         <button id="submit" data-type="submit" class="btn">Submit Answer</button>
     </section>
 
+    <!-- Answer selection grid -->
     <section id="options">
         <div class="grid-container">
             <div class="grid-item orange">
@@ -74,10 +77,12 @@
         </div>
     </section>
 
+    <!-- Current score -->
     <section id="score">
         <p>Score: <span id="current-score"></span> / <span id="questions-answered"></span></p>
     </section>
 
+    <!-- Instructions and reset buttons -->
     <section id="buttons">
         <div>
             <span>
@@ -89,9 +94,9 @@
         </div>
     </section>
 
+    <!-- Welcome modal -->
     <section id="welcome">
         <div id="welcome-modal" class="modal">
-            <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
@@ -108,11 +113,9 @@
         </div>
     </section>
 
+    <!-- Instructions modal -->
     <section id="instructions">
-        <!-- The Modal (code taken from https://www.w3schools.com/howto/howto_css_modals.asp) -->
         <div id="instructions-modal" class="modal">
-
-            <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
@@ -126,12 +129,12 @@
                     <h3>Enjoy the game!</h3>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <!-- Correct answer modal -->
     <section id="correct">
         <div id="correct-modal" class="modal">
-            <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
@@ -147,9 +150,10 @@
             </div>
         </div>
     </section>
+
+    <!-- No answer selected modal -->
     <section id="select">
         <div id="select-modal" class="modal">
-            <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
@@ -165,9 +169,10 @@
             </div>
         </div>
     </section>
+
+    <!-- Incorrect answer modal -->
     <section id="incorrect">
         <div id="incorrect-modal" class="modal">
-            <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
