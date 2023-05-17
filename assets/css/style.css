@@ -44,7 +44,9 @@ h1 {
 }
 
 /* Style rule to set width and height of question span elements and add margins and border */
-#first-colour, #second-colour, #answer {
+#first-colour,
+#second-colour,
+#answer {
     display: inline-block;
     position: relative;
     margin: 5px;
@@ -147,7 +149,8 @@ h1 {
 }
 
 /* HOVER TEXT */
-.question-colour-text, .colour-text {
+.question-colour-text,
+.colour-text {
     display: none;
     position: absolute;
     z-index: 1;
@@ -159,7 +162,8 @@ h1 {
     padding: 2px;
 }
 
-.box:hover .question-colour-text, .grid-item:hover .colour-text {
+.box:hover .question-colour-text,
+.grid-item:hover .colour-text {
     display: unset;
 }
 
@@ -191,60 +195,31 @@ h1 {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: white;
     margin: auto;
-    border: 1px solid #888;
+    border: 1px solid #333e49;
     width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
 }
 
 /* The Close Button */
 .close {
+    padding: 0 6px;
     color: white;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 1.5rem;
+    border: 1px solid #333e49;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    border: 1px solid white;
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
+    padding: 2px 2px 4px 28px;
+    background-color: #333e49;
     color: white;
 }
 
@@ -254,6 +229,6 @@ h1 {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #333e49;
     color: white;
 }
