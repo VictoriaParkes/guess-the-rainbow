@@ -248,13 +248,14 @@ h1 {
     padding: 10px 16px 40px;
 }
 
-/* Style rule to  */
+/* Style rule to add border and outline to correct answer colour box, and increase size with padding */
 #correct-answer-colour {
     border: 2px solid white;
     outline: 3px solid #333e49;
     padding: 10px;
 }
 
+/* Style rule to add border and outline to correct answer text box, set background colour, increase size of surrounding span with margin and capitalize text */
 #correct-answer-text {
     border: 2px solid white;
     outline: 3px solid #333e49;
