@@ -223,12 +223,24 @@ h1 {
     color: white;
 }
 
+.modal-header h2 {
+    margin: 10px 0;
+}
+
 .modal-body {
-    padding: 2px 16px;
+    padding: 10px 16px;
+}
+
+.modal-body p {
+    margin: 10px 0;
 }
 
 .modal-footer {
     padding: 2px 16px;
     background-color: #333e49;
     color: white;
+}
+
+.modal-footer h3 {
+    margin: 10px 0;
 }
