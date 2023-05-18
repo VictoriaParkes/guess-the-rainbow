@@ -255,26 +255,29 @@ function incorrect() {
 
 // Inform the user of the correct answer in the incorrect answer modal
 function displayCorrectAnswer() {
-    let correctAnswerSpan = document.getElementById("correct-answer");
+    let correctAnswerColour = document.getElementById("correct-answer-colour");
+    let correctAnswerText = document.getElementById("correct-answer-text");
     
+    correctAnswerColour.style.backgroundColor = correctAnswer;
+
     if (correctAnswer === "rgb(128, 0, 128)") {
-        correctAnswerSpan.innerHTML = "purple";
+        correctAnswerText.innerHTML = "purple";
     } else if (correctAnswer === "rgb(173, 216, 230)") {
-        correctAnswerSpan.innerHTML = "light blue";
+        correctAnswerText.innerHTML = "light blue";
     } else if (correctAnswer === "rgb(0, 128, 0)") {
-        correctAnswerSpan.innerHTML = "green";
+        correctAnswerText.innerHTML = "green";
     } else if (correctAnswer === "rgb(255, 192, 203)") {
-        correctAnswerSpan.innerHTML = "pink";
+        correctAnswerText.innerHTML = "pink";
     } else if (correctAnswer === "rgb(128, 128, 0)") {
-        correctAnswerSpan.innerHTML = "dark yellow";
+        correctAnswerText.innerHTML = "dark yellow";
     } else if (correctAnswer === "rgb(255, 165, 0)") {
-        correctAnswerSpan.innerHTML = "orange";
+        correctAnswerText.innerHTML = "orange";
     } else if (correctAnswer === "rgb(139, 0, 0)") {
-        correctAnswerSpan.innerHTML = "dark red";
+        correctAnswerText.innerHTML = "dark red";
     } else if (correctAnswer === "rgb(0, 0, 139)") {
-        correctAnswerSpan.innerHTML = "dark blue";
+        correctAnswerText.innerHTML = "dark blue";
     } else if (correctAnswer === "rgb(255, 255, 166)") {
-        correctAnswerSpan.innerHTML = "light yellow";
+        correctAnswerText.innerHTML = "light yellow";
     } 
 }
 

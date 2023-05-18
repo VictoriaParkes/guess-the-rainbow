@@ -228,7 +228,7 @@ h1 {
 
 /* Style to add margin above and below text elements in modal body */
 .modal-body p {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 /* Style rule to size modal footer and set background and text colour */
@@ -241,4 +241,24 @@ h1 {
 /* Style rule to add margin above and below modal footer text */
 .modal-footer h3 {
     margin: 10px 0;
+}
+
+/* Style rule to increase padding in the incorrect modal body */
+#incorrect-modal .modal-body {
+    padding: 10px 16px 40px;
+}
+
+/* Style rule to  */
+#correct-answer-colour {
+    border: 2px solid white;
+    outline: 3px solid #333e49;
+    padding: 10px;
+}
+
+#correct-answer-text {
+    border: 2px solid white;
+    outline: 3px solid #333e49;
+    background-color: white;
+    margin: 0 20px;
+    text-transform: capitalize;
 }
