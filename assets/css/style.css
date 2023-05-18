@@ -110,6 +110,7 @@ h1 {
     padding: 30px;
     position: relative;
     display: inline-block;
+    text-transform: capitalize;
 }
 
 .orange {
