@@ -11,7 +11,7 @@ height and width */
     box-sizing: border-box;
 }
 
-/* Style rule to centre all page content with equal margins on left and right */
+/* Style rule to centre all page content with equal margins on left and right, set font-family and text colour */
 body {
     width: 85%;
     margin-left: auto;
@@ -22,18 +22,19 @@ body {
 }
 
 /* HEADER */
-/* Style rule to set size of logo image */
+/* Style rule to set size and positioning of logo image */
 img {
     max-width: 30%;
     margin-top: 10px;
 }
 
+/* Style rule to set font-size of game header */
 h1 {
     font-size: 3rem;
 }
 
 /* QUESTION */
-
+/* Style rule to add margin around question */
 #question {
     margin: 20px;
 }
@@ -43,7 +44,7 @@ h1 {
     font-size: 5rem;
 }
 
-/* Style rule to set width and height of question span elements and add margins and border */
+/* Style rule to set position relative to it's default position, width and height of question span elements and add border */
 #first-colour,
 #second-colour,
 #answer {
@@ -57,10 +58,12 @@ h1 {
     vertical-align: top;
 }
 
+/* Style rule to set size of arithetic icons */
 .fas {
     font-size: 5rem;
 }
 
+/* Style rule to set size and position of question mark icon */
 .fa-question {
     font-size: 4.5rem;
     vertical-align: text-top;
@@ -68,42 +71,37 @@ h1 {
 }
 
 /* SCORE */
+/* Style rule to add margin around score text */
 #score {
     margin: 10px;
 }
 
 /* BUTTONS */
+/* Style rule to position buttons, set background and text colour, add border and set font-family */
 .btn {
     margin: 10px;
     padding: 10px;
     background-color: white;
-    border: 3px solid #333e49;
     color: #333e49;
+    border: 3px solid #333e49;
     font-family: inherit;
 }
 
+/* Style rule to change button background and text colour when hovered over */
 .btn:hover {
     background-color: #333e49;
     color: white;
 }
 
-/* ANSWER */
-/* Style rule to centre and size answer div element and add border */
-/* #answer {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-} */
-
 /* OPTIONS */
-/* Style rule to create grid with three equal columns */
+/* Style rule to create grid with three equal columns and add gap between boxes */
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
 }
 
-/* Style rule to add border to each grid section and padding to size sections */
+/* Style rule to add border to each grid section, add padding to size sections, position to allow for hover text display and capitalize hover text */
 .grid-item {
     border: 2px solid white;
     outline: 3px solid #333e49;
@@ -113,6 +111,7 @@ h1 {
     text-transform: capitalize;
 }
 
+/* Style rules to set background colour of grid-items */
 .orange {
     background-color: orange;
 }
@@ -150,6 +149,7 @@ h1 {
 }
 
 /* HOVER TEXT */
+/* Style rule to hide hover text by default, display centered over grid-item when displayed, and set background colour and add border */
 .question-colour-text,
 .colour-text {
     display: none;
@@ -163,54 +163,45 @@ h1 {
     padding: 2px;
 }
 
+/* Style rule to display text when hovered over */
 .box:hover .question-colour-text,
 .grid-item:hover .colour-text {
     display: unset;
 }
 
-/* INSTRUCTIONS MODAL (code taken from https://www.w3schools.com/howto/howto_css_modals.asp) */
-/* The Modal (background) */
+/* MODALS */
+/* Style rule to hide hover text by default, fix the position, position over the other page content, set size and set translucent background colour */
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
-
-    /* overflow: auto; */
-    /* Enable scroll if needed */
-
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
-/* Modal Content */
+/* Style rule to position the modal relative to it's default position, centre and size the modal, and set background colour and border */
 .modal-content {
     position: relative;
-    background-color: white;
     margin: auto;
-    border: 1px solid #333e49;
     width: 80%;
+    background-color: white;
+    border: 1px solid #333e49;
 }
 
-/* The Close Button */
+/* Style rule to position, size, set colour of close element, and add border to prevent layout shift when hovered over */
 .close {
-    padding: 0 6px;
-    color: white;
     float: right;
     font-size: 1.5rem;
+    padding: 0 6px;
+    color: white;
     border: 1px solid #333e49;
 }
 
+/* Style rule to set border to white, remove text decoration and change cursor to a pointer when close element hovered over */
 .close:hover,
 .close:focus {
     border: 1px solid white;
@@ -218,30 +209,36 @@ h1 {
     cursor: pointer;
 }
 
+/* Style rule to size modal header and set background and text colour */
 .modal-header {
     padding: 2px 2px 4px 28px;
     background-color: #333e49;
     color: white;
 }
 
+/* Style rule to add margin above and below modal header text */
 .modal-header h2 {
     margin: 10px 0;
 }
 
+/* Style rule to size modal body */
 .modal-body {
     padding: 10px 16px;
 }
 
+/* Style to add margin above and below text elements in modal body */
 .modal-body p {
     margin: 10px 0;
 }
 
+/* Style rule to size modal footer and set background and text colour */
 .modal-footer {
     padding: 2px 16px;
     background-color: #333e49;
     color: white;
 }
 
+/* Style rule to add margin above and below modal footer text */
 .modal-footer h3 {
     margin: 10px 0;
 }
