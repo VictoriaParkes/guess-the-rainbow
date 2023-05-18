@@ -79,11 +79,15 @@ function displayQuestion() {
 }
 
 function runGame() {
-    displayQuestion(currentQuestion);
-    // Set score
-    document.getElementById("current-score").innerHTML = score;
-    // Set questions answered
-    document.getElementById("questions-answered").innerHTML = questionsAnswered;
+    if (questionsAnswered >= "9") {
+        endGame();
+    } else {
+        displayQuestion(currentQuestion);
+        // Set score
+        document.getElementById("current-score").innerHTML = score;
+        // Set questions answered
+        document.getElementById("questions-answered").innerHTML = questionsAnswered;
+    }
 }
 
 // Set answer span element background colour
@@ -168,7 +172,7 @@ function instructions() {
     // Get the modal
     let modal = document.getElementById("instructions-modal");
     // Get the <span> element that closes the modal
-    let span = document.getElementsByClassName("close")[0];
+    let span = document.getElementsByClassName("close")[1];
     // Display the modal
     modal.style.display = "block";
     // When the user clicks on <span> (x), close the modal
@@ -188,7 +192,7 @@ function correct() {
     // Get the modal
     let correctModal = document.getElementById("correct-modal");
     // Get the <span> element that closes the modal
-    let close = document.getElementsByClassName("close")[1];
+    let close = document.getElementsByClassName("close")[2];
     correctModal.style.display = "block";
     // When the user clicks on <span> (x), close the modal
     close.onclick = function () {
@@ -214,7 +218,7 @@ function notAnswered() {
     // Get the modal
     let selectModal = document.getElementById("select-modal");
     // Get the <span> element that closes the modal
-    let close = document.getElementsByClassName("close")[2];
+    let close = document.getElementsByClassName("close")[3];
     // Display the modal
     selectModal.style.display = "block";
     // When the user clicks on <span> (x), close the modal
@@ -233,7 +237,7 @@ function incorrect() {
     // Get the modal
     let incorrectModal = document.getElementById("incorrect-modal");
     // Get the <span> element that closes the modal
-    let close = document.getElementsByClassName("close")[3];
+    let close = document.getElementsByClassName("close")[4];
     // Display the modal
     incorrectModal.style.display = "block";
     // When the user clicks on <span> (x), close the modal
@@ -313,4 +317,27 @@ function mouseOver() {
             span.style.visibility = "hidden";
         }
     });
+}
+
+function endGame() {
+    document.getElementById("end-score").innerHTML = score;
+
+    // Get the modal
+    let endModal = document.getElementById("end-modal");
+    // Get the <span> element that closes the modal
+    let close = document.getElementsByClassName("close")[5];
+    // Display the modal
+    endModal.style.display = "block";
+    // When the user clicks on <span> (x), close the modal
+    close.onclick = function () {
+        endModal.style.display = "none";
+        reset();
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === endModal) {
+            endModal.style.display = "none";
+            reset();
+        }
+    }
 }
