@@ -1,6 +1,4 @@
 // Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
-// Modal code taken from https://www.w3schools.com/howto/howto_css_modals.asp
-
 document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("submit").addEventListener("click", function () {
@@ -146,20 +144,19 @@ function increaseQuestionsAnswered() {
     document.getElementById("questions-answered").innerHTML = questionsAnswered;
 }
 
+// Display and close the welcome modal
 function welcome() {
-    // Get the modal
     let welcomeModal = document.getElementById("welcome-modal");
-    // Get the <span> element that closes the modal
     let close = document.getElementsByClassName("close")[0];
-    // Display the modal
     welcomeModal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
+    
+    // Close the modal when the user clicks x
     close.onclick = function () {
         welcomeModal.style.display = "none";
         runGame(currentQuestion);
     }
 
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === welcomeModal) {
             welcomeModal.style.display = "none";
@@ -168,19 +165,18 @@ function welcome() {
     }
 }
 
+// Display and close the instructions modal
 function instructions() {
-    // Get the modal
     let modal = document.getElementById("instructions-modal");
-    // Get the <span> element that closes the modal
     let span = document.getElementsByClassName("close")[1];
-    // Display the modal
     modal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
+
+    // Close the modal when the user clicks x
     span.onclick = function () {
         modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
@@ -188,13 +184,13 @@ function instructions() {
     }
 }
 
+// Display and close the correct answer modal
 function correct() {
-    // Get the modal
     let correctModal = document.getElementById("correct-modal");
-    // Get the <span> element that closes the modal
     let close = document.getElementsByClassName("close")[2];
     correctModal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
+
+    // Close the modal when the user clicks x
     close.onclick = function () {
         correctModal.style.display = "none";
         increaseScore();
@@ -202,7 +198,7 @@ function correct() {
         incrementQuestion();
         runGame(currentQuestion);
     }
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === correctModal) {
             correctModal.style.display = "none";
@@ -214,18 +210,17 @@ function correct() {
     }
 }
 
+// Display and close the select answer modal
 function notAnswered() {
-    // Get the modal
     let selectModal = document.getElementById("select-modal");
-    // Get the <span> element that closes the modal
     let close = document.getElementsByClassName("close")[3];
-    // Display the modal
     selectModal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
+
+    // Close the modal when the user clicks x
     close.onclick = function () {
         selectModal.style.display = "none";
     }
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === selectModal) {
             selectModal.style.display = "none";
@@ -233,21 +228,20 @@ function notAnswered() {
     }
 }
 
+// Display and close the incorrect answer modal
 function incorrect() {
-    // Get the modal
     let incorrectModal = document.getElementById("incorrect-modal");
-    // Get the <span> element that closes the modal
     let close = document.getElementsByClassName("close")[4];
-    // Display the modal
     incorrectModal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
+
+    // Close the modal when the user clicks x
     close.onclick = function () {
         incorrectModal.style.display = "none";
         incrementQuestion();
         increaseQuestionsAnswered();
         runGame(currentQuestion);
     }
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === incorrectModal) {
             incorrectModal.style.display = "none";
@@ -258,6 +252,7 @@ function incorrect() {
     }
 }
 
+// Reset the game
 function reset() {
     currentQuestion = 0;
     score = 0;
@@ -265,6 +260,7 @@ function reset() {
     runGame();
 }
 
+// Display colour text when question span hovered over
 function mouseOver() {
     let boxStyle = window.getComputedStyle(this, null);
     let boxColour = boxStyle.getPropertyValue("background-color");
@@ -319,21 +315,20 @@ function mouseOver() {
     });
 }
 
+// Display and close the end game modal
 function endGame() {
     document.getElementById("end-score").innerHTML = score;
 
-    // Get the modal
     let endModal = document.getElementById("end-modal");
-    // Get the <span> element that closes the modal
     let close = document.getElementsByClassName("close")[5];
-    // Display the modal
     endModal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
+
+    // Close the modal when the user clicks x
     close.onclick = function () {
         endModal.style.display = "none";
         reset();
     }
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === endModal) {
             endModal.style.display = "none";
