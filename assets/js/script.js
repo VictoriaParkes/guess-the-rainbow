@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkAnswer();
     });
 
-    document.getElementById("answer").addEventListener("keydown", function (event) {
+    document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             checkAnswer();
         }
