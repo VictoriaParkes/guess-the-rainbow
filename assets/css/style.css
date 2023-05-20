@@ -170,7 +170,7 @@ h1 {
 }
 
 /* MODALS */
-/* Style rule to hide hover text by default, fix the position, position over the other page content, set size and set translucent background colour */
+/* Style rule to hide hover text by default, fix the position, position over the other page content, set size and set translucent background colour and enable scrolling */
 .modal {
     display: none;
     position: fixed;
