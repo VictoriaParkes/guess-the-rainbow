@@ -263,3 +263,93 @@ h1 {
     margin: 0 20px;
     text-transform: capitalize;
 }
+
+/* MEDIA QUERIES */
+/* Devices up to 600px wide */
+@media screen and (max-width: 600px) {
+
+    img {
+        min-width: 50%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #question {
+        margin: 50px 20px 20px;
+    }
+
+    #first-colour,
+    #second-colour,
+    #answer {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .fa-plus,
+    .fa-equals {
+        font-size: 4rem;
+        margin-top: 5px;
+    }
+
+    .fa-question {
+        font-size: 3.5rem;
+    }
+
+    .question-colour-text {
+        top: -50%;
+    }
+}
+
+/* Devices up to 460px wide */
+@media screen and (max-width: 460px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #first-colour,
+    #second-colour,
+    #answer {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .fa-plus,
+    .fa-equals {
+        font-size: 3rem;
+    }
+
+    .fa-question {
+        font-size: 2.5rem;
+    }
+
+    .question-colour-text {
+        top: -70%;
+    }
+}
+
+/* Devices up to 370px wide */
+@media screen and (max-width: 370px) {
+
+    #first-colour,
+    #second-colour,
+    #answer {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .fa-plus,
+    .fa-equals {
+        font-size: 2rem;
+    }
+
+    .fa-question {
+        font-size: 1.5rem;
+    }
+
+    .question-colour-text {
+        top: -110%;
+    }
+}
