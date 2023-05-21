@@ -354,3 +354,12 @@ h1 {
         top: -110%;
     }
 }
+
+#sorry {
+    margin: 30px;
+    line-height: 2rem;
+}
+
+#reload {
+    color: #333e49;
+}
