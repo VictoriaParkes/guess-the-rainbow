@@ -114,8 +114,6 @@ function checkAnswer() {
 
     let userAnswer = answerStyle.getPropertyValue("background-color");
 
-    console.log(userAnswer);
-
     let answerCheck = userAnswer === correctAnswer;
 
     if (answerCheck) {
@@ -149,7 +147,7 @@ function welcome() {
     let welcomeModal = document.getElementById("welcome-modal");
     let close = document.getElementsByClassName("close")[0];
     welcomeModal.style.display = "block";
-    
+
     // Close the modal when the user clicks x
     close.onclick = function () {
         welcomeModal.style.display = "none";
@@ -168,11 +166,11 @@ function welcome() {
 // Display and close the instructions modal
 function instructions() {
     let modal = document.getElementById("instructions-modal");
-    let span = document.getElementsByClassName("close")[1];
+    let close = document.getElementsByClassName("close")[1];
     modal.style.display = "block";
 
     // Close the modal when the user clicks x
-    span.onclick = function () {
+    close.onclick = function () {
         modal.style.display = "none";
     }
 
@@ -257,7 +255,7 @@ function incorrect() {
 function displayCorrectAnswer() {
     let correctAnswerColour = document.getElementById("correct-answer-colour");
     let correctAnswerText = document.getElementById("correct-answer-text");
-    
+
     correctAnswerColour.style.backgroundColor = correctAnswer;
 
     if (correctAnswer === "rgb(128, 0, 128)") {
@@ -278,7 +276,7 @@ function displayCorrectAnswer() {
         correctAnswerText.innerHTML = "dark blue";
     } else if (correctAnswer === "rgb(255, 255, 166)") {
         correctAnswerText.innerHTML = "light yellow";
-    } 
+    }
 }
 
 // Reset the game
@@ -293,8 +291,8 @@ function reset() {
 function mouseOver() {
     let boxStyle = window.getComputedStyle(this, null);
     let boxColour = boxStyle.getPropertyValue("background-color");
-    console.log(boxColour);
     let questionBoxSpan = document.querySelectorAll(".question-colour-text");
+
     questionBoxSpan.forEach((span) => {
         if (boxColour === "rgb(255, 0, 0)") {
             span.innerHTML = "Red";
