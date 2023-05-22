@@ -1,6 +1,13 @@
 /* Import url for google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+/* Style rule to centre the page content vertically */
+html {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
 /* Universal style selector to remove margin, padding and border for all 
 elements and using box-border to include padding and border in elements total 
 height and width */
