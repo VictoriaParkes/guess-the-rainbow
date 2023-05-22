@@ -11,6 +11,8 @@ The primary audience of the site will be children and anyone else interested in 
 # Contents
 /////////////////////////
 
+---
+
 # Features
 ## Current Features
 The main content website is a displayed on a single page with the following features:
@@ -38,4 +40,39 @@ The website also has a 404 error page informing the user that the page cannot be
 ## Future Features
 - More advanced game play levels testing the user on the mixing of secondary and tertiary colours.
 
+---
+
 # Design
+
+## Structure
+The website is designed with a simple structure with the content positioned centrally on the page displayed vertically in the following order:
+
+- The logo
+- The game title
+- The question
+- The submit button
+- The answer options displayed in a grid format
+- The user's current score
+- The instructions and reset buttons
+
+## Wireframes
+Click [here](docs/wireframes.png) to view the wireframes.
+
+## Colour Scheme
+![colour palette](docs/colour-palette.png)
+The colour scheme was chosen to complement the colours in the images without causing distraction and provide contrast for good readability of the information. The colour palette was created using [Coolors](https://coolors.co/).
+
+## Typography
+[Google Fonts](https://fonts.google.com/) was used to add the following fonts:
+- 'Roboto' was used for the font of the whole website to provide a simple and clean appearance.
+
+## Imagery
+The logo image was chosen to reflect the content and title of the game, and provide a simple appearance without causing distraction.
+
+## Icons
+Icons were used for the arithmetic symbols and the question mark displayed in the question.
+
+All icons were sourced from [Font Awesome](https://fontawesome.com/).
+
+---
+
