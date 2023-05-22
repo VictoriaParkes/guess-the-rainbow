@@ -200,7 +200,6 @@ set size and set translucent background colour and enable scrolling */
     align-items: center;
     position: fixed;
     z-index: 1;
-    padding: 50px 0;
     left: 0;
     top: 0;
     width: 100%;
