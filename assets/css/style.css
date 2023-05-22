@@ -102,6 +102,7 @@ and set font-family */
 .btn:hover {
     background-color: #333e49;
     color: white;
+    cursor: pointer;
 }
 
 /* OPTIONS */
@@ -161,6 +162,10 @@ and capitalize hover text */
 
 .d-yellow {
     background-color: #808000;
+}
+
+.grid-item:hover {
+    Cursor: pointer;
 }
 
 /* HOVER TEXT */
