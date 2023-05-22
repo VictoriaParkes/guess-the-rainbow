@@ -11,7 +11,8 @@ height and width */
     box-sizing: border-box;
 }
 
-/* Style rule to centre all page content with equal margins on left and right, set font-family and text colour */
+/* Style rule to centre all page content with equal margins on left and right, 
+set font-family and text colour */
 body {
     width: 85%;
     max-width: 1440px;
@@ -45,7 +46,8 @@ h1 {
     font-size: 5rem;
 }
 
-/* Style rule to set position relative to it's default position, width and height of question span elements and add border */
+/* Style rule to set position relative to it's default position, width 
+and height of question span elements and add border */
 #first-colour,
 #second-colour,
 #answer {
@@ -78,7 +80,8 @@ h1 {
 }
 
 /* BUTTONS */
-/* Style rule to position buttons, set background and text colour, add border and set font-family */
+/* Style rule to position buttons, set background and text colour, add border 
+and set font-family */
 .btn {
     margin: 10px;
     padding: 10px;
@@ -95,14 +98,18 @@ h1 {
 }
 
 /* OPTIONS */
-/* Style rule to create grid with three equal columns and add gap between boxes */
+/* Style rule to create grid with three equal columns 
+and add gap between boxes */
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
 }
 
-/* Style rule to add border to each grid section, add padding to size sections, position to allow for hover text display and capitalize hover text */
+/* Style rule to add border to each grid section, 
+add padding to size sections, 
+position to allow for hover text display 
+and capitalize hover text */
 .grid-item {
     border: 2px solid white;
     outline: 3px solid #333e49;
@@ -150,7 +157,9 @@ h1 {
 }
 
 /* HOVER TEXT */
-/* Style rule to hide hover text by default, display centered over grid-item when displayed, and set background colour and add border */
+/* Style rule to hide hover text by default, 
+display centered over grid-item when displayed, 
+and set background colour and add border */
 .question-colour-text,
 .colour-text {
     display: none;
@@ -171,7 +180,9 @@ h1 {
 }
 
 /* MODALS */
-/* Style rule to hide hover text by default, fix the position, position over the other page content, set size and set translucent background colour and enable scrolling */
+/* Style rule to hide hover text by default, 
+fix the position, position over the other page content, 
+set size and set translucent background colour and enable scrolling */
 .modal {
     display: none;
     position: fixed;
@@ -185,7 +196,8 @@ h1 {
     overflow: auto;
 }
 
-/* Style rule to position the modal relative to it's default position, centre and size the modal, and set background colour and border */
+/* Style rule to position the modal relative to it's default position, 
+centre and size the modal, and set background colour and border */
 .modal-content {
     position: relative;
     margin: auto;
@@ -194,7 +206,8 @@ h1 {
     border: 1px solid #333e49;
 }
 
-/* Style rule to position, size, set colour of close element, and add border to prevent layout shift when hovered over */
+/* Style rule to position, size, set colour of close element, 
+and add border to prevent layout shift when hovered over */
 .close {
     float: right;
     font-size: 1.5rem;
@@ -203,7 +216,8 @@ h1 {
     border: 1px solid #333e49;
 }
 
-/* Style rule to set border to white, remove text decoration and change cursor to a pointer when close element hovered over */
+/* Style rule to set border to white, remove text decoration 
+and change cursor to a pointer when close element hovered over */
 .close:hover,
 .close:focus {
     border: 1px solid white;
@@ -250,14 +264,17 @@ h1 {
     padding: 10px 16px 40px;
 }
 
-/* Style rule to add border and outline to correct answer colour box, and increase size with padding */
+/* Style rule to add border and outline to correct answer colour box, 
+and increase size with padding */
 #correct-answer-colour {
     border: 2px solid white;
     outline: 3px solid #333e49;
     padding: 10px;
 }
 
-/* Style rule to add border and outline to correct answer text box, set background colour, increase size of surrounding span with margin and capitalize text */
+/* Style rule to add border and outline to correct answer text box, 
+set background colour, increase size of surrounding span with margin 
+and capitalize text */
 #correct-answer-text {
     border: 2px solid white;
     outline: 3px solid #333e49;
