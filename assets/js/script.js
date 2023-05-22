@@ -146,7 +146,7 @@ function increaseQuestionsAnswered() {
 function welcome() {
     let welcomeModal = document.getElementById("welcome-modal");
     let close = document.getElementsByClassName("close")[0];
-    welcomeModal.style.display = "block";
+    welcomeModal.style.display = "flex";
 
     // Close the modal when the user clicks x
     close.onclick = function () {
@@ -165,19 +165,19 @@ function welcome() {
 
 // Display and close the instructions modal
 function instructions() {
-    let modal = document.getElementById("instructions-modal");
+    let instructionsModal = document.getElementById("instructions-modal");
     let close = document.getElementsByClassName("close")[1];
-    modal.style.display = "block";
+    instructionsModal.style.display = "flex";
 
     // Close the modal when the user clicks x
     close.onclick = function () {
-        modal.style.display = "none";
+        instructionsModal.style.display = "none";
     }
 
     // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
+        if (event.target === instructionsModal) {
+            instructionsModal.style.display = "none";
         }
     }
 }
@@ -186,7 +186,7 @@ function instructions() {
 function correct() {
     let correctModal = document.getElementById("correct-modal");
     let close = document.getElementsByClassName("close")[2];
-    correctModal.style.display = "block";
+    correctModal.style.display = "flex";
 
     // Close the modal when the user clicks x
     close.onclick = function () {
@@ -212,7 +212,7 @@ function correct() {
 function notAnswered() {
     let selectModal = document.getElementById("select-modal");
     let close = document.getElementsByClassName("close")[3];
-    selectModal.style.display = "block";
+    selectModal.style.display = "flex";
 
     // Close the modal when the user clicks x
     close.onclick = function () {
@@ -231,7 +231,7 @@ function incorrect() {
     let incorrectModal = document.getElementById("incorrect-modal");
     let close = document.getElementsByClassName("close")[4];
     displayCorrectAnswer();
-    incorrectModal.style.display = "block";
+    incorrectModal.style.display = "flex";
 
     // Close the modal when the user clicks x
     close.onclick = function () {
@@ -348,7 +348,7 @@ function endGame() {
 
     let endModal = document.getElementById("end-modal");
     let close = document.getElementsByClassName("close")[5];
-    endModal.style.display = "block";
+    endModal.style.display = "flex";
 
     // Close the modal when the user clicks x
     close.onclick = function () {
