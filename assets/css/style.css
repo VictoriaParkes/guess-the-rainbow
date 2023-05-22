@@ -383,8 +383,4 @@ and capitalize text */
         font-size: 2rem;
         margin-top: 13px;
     }
-
-    .question-colour-text {
-        top: -110%;
-    }
 }
