@@ -1,39 +1,41 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Guess The Rainbow
 
-Welcome,
+![Mock-up Screenshots](docs/mockup-screenshots.png)
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Guess The Rainbow is an interactive website designed to test the users knowledge of basic colour mixing.
+The website is designed to be a responsive website that can be accessed and easily viewed on a range of screen sizes.
+The primary audience of the site will be children and anyone else interested in learning the basics of colour mixing.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **March 3rd, 2023**
+[The deployed website can be found here](https://victoriaparkes.github.io/guess-the-rainbow/)
 
-## Codeanywhere Reminders
+# Contents
+/////////////////////////
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+# Features
+## Current Features
+The main content website is a displayed on a single page with the following features:
+- A header with logo and title.
+- A "welcome" modal is displayed on loading the page to welcome the user and inform them of the structure of the game.
+- An interactive question section displaying the question to answer, with functionality to inform the user in text of the colours displayed when the cursor is hovered over the elements.
+- A "Submit Answer" button used to submit the choosen answer to the question for feedback.
+- A grid of colours to choose the answer from which will change the background colour of the question answer box to reflect the choosen answer. Each section of the colour grid also has the functionality to display the section colour in text when the cursor is hovered over.
+- The user score is displayed below the colour grid displaying the number of correct answers out of the number of questions answered.
 
-`python3 -m http.server`
+![Hover feature](docs/features/colour-hover.png)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- Feedback is recieved via the display of a modal:
+ - "Select an Answer" modal to inform the user they have not submitted an answer.
+ - "Correct" modal to inform the user they have submitted the correct answer.
+ - "Incorrect" modal to inform the user they have submitted an incorrect answer and inform them of the correct answer.
+- An instrutions button which displays a modal containing instructions informing the user how to use the website.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+![Modals](docs/features/modals.png)
 
-`http_server`
+- A reset button with the functionality to reset the game. The questions and score are reset when clicked.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The website also has a 404 error page informing the user that the page cannot be loaded.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Future Features
+- More advanced game play levels testing the user on the mixing of secondary and tertiary colours.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+# Design
