@@ -14,6 +14,7 @@ height and width */
 /* Style rule to centre all page content with equal margins on left and right, set font-family and text colour */
 body {
     width: 85%;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -24,7 +25,7 @@ body {
 /* HEADER */
 /* Style rule to set size and positioning of logo image */
 img {
-    max-width: 30%;
+    width: 450px;
     margin-top: 10px;
 }
 
@@ -219,7 +220,7 @@ h1 {
 
 /* Style rule to add margin above and below modal header text */
 .modal-header h2 {
-    margin: 10px 0;
+    margin: 10px 26px 10px 0;
 }
 
 /* Style rule to size modal body */
@@ -265,12 +266,22 @@ h1 {
     text-transform: capitalize;
 }
 
+/* 404 PAGE */
+#sorry {
+    margin: 30px;
+    line-height: 2rem;
+}
+
+#reload {
+    color: #333e49;
+}
+
 /* MEDIA QUERIES */
 /* Devices up to 600px wide */
 @media screen and (max-width: 600px) {
 
     img {
-        min-width: 50%;
+        width: 300px;
     }
 
     h1 {
@@ -278,7 +289,7 @@ h1 {
     }
 
     #question {
-        margin: 50px 20px 20px;
+        margin: 50px 0 20px;
     }
 
     #first-colour,
@@ -305,6 +316,10 @@ h1 {
 
 /* Devices up to 460px wide */
 @media screen and (max-width: 460px) {
+
+    img {
+        width: 230px;
+    }
 
     h1 {
         font-size: 1.5rem;
@@ -334,32 +349,13 @@ h1 {
 /* Devices up to 370px wide */
 @media screen and (max-width: 370px) {
 
-    #first-colour,
-    #second-colour,
-    #answer {
-        width: 2rem;
-        height: 2rem;
-    }
-
     .fa-plus,
     .fa-equals {
         font-size: 2rem;
-    }
-
-    .fa-question {
-        font-size: 1.5rem;
+        margin-top: 13px;
     }
 
     .question-colour-text {
         top: -110%;
     }
-}
-
-#sorry {
-    margin: 30px;
-    line-height: 2rem;
-}
-
-#reload {
-    color: #333e49;
 }
