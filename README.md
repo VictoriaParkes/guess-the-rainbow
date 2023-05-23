@@ -76,3 +76,41 @@ All icons were sourced from [Font Awesome](https://fontawesome.com/).
 
 ---
 
+# Technologies Used
+HTML - to create the structure of the website.
+
+CSS - to add style to the website.
+
+Javasript - to functionality to the website.
+
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) - used to help test features and for debugging.
+
+[Google Fonts](https://fonts.google.com/) - a fonts library.
+
+[Font Awesome](https://fontawesome.com/) - for iconography used on the website.
+
+[Git](https://git-scm.com/) - for version control.
+
+[GitHub](https://github.com/) - to create and store the project repository.
+
+[GitPod](https://gitpod.io/) - development hosting platform used to create the website.
+
+[Balsamiq](https://balsamiq.com/) - used to create Wireframes for the layout of the pages.
+
+[Coolors](https://coolors.co/) - used to create the colour palette.
+
+[Rawpixel](https://www.rawpixel.com/) - used to source logo image.
+
+[CloudConvert](https://cloudconvert.com/) - used to convert images to webp format.
+
+[favicon.cc](https://www.favicon.cc/) - to to create the favicon.
+
+[Am I Responsive](https://ui.dev/amiresponsive) - To view the website on a range of devices and create the mock-up screenshot image.
+
+[The W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML files.
+
+[The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate the CSS file.
+
+[PageSpeed Insights](https://pagespeed.web.dev/) - Used to generate lighthouse report for 404 error page as lighthouse was unable to load the page when used in Chrome Developer Tools.
+
+[Prettier.io](https://prettier.io/) - Used to format code.
