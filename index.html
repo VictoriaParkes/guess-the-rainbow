@@ -21,14 +21,14 @@
 <body>
     <header>
         <!-- Logo and game title -->
-        <section id="logo">
+        <div id="logo">
             <img src="assets/images/logo.webp" alt="Rainbow logo">
             <h1>Guess The Rainbow</h1>
-        </section>
+        </div>
     </header>
 
     <!-- Question -->
-    <section id="question">
+    <div id="question">
         <div class="question-container">
             <div id="first-colour" class="box">
                 <span class="question-colour-text"></span>
@@ -44,10 +44,10 @@
             </div>
         </div>
         <button id="submit" data-type="submit" class="btn">Submit Answer</button>
-    </section>
+    </div>
 
     <!-- Answer selection grid -->
-    <section id="options">
+    <div id="options">
         <div class="grid-container">
             <div class="grid-item orange">
                 <span class="colour-text">orange</span>
@@ -77,15 +77,15 @@
                 <span class="colour-text">dark yellow</span>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Current score -->
-    <section id="score">
+    <div id="score">
         <p>Score: <span id="current-score"></span> / <span id="questions-answered"></span></p>
-    </section>
+    </div>
 
     <!-- Instructions and reset buttons -->
-    <section id="buttons">
+    <div id="buttons">
         <div>
             <span>
                 <button id="instructions-btn" data-type="instructions" class="btn">Instructions</button>
@@ -94,10 +94,10 @@
                 <button id="reset-btn" data-type="reset" class="btn">Reset</button>
             </span>
         </div>
-    </section>
+    </div>
 
     <!-- Welcome modal -->
-    <section id="welcome">
+    <div id="welcome">
         <div id="welcome-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -114,10 +114,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Instructions modal -->
-    <section id="instructions">
+    <div id="instructions">
         <div id="instructions-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -134,10 +134,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Correct answer modal -->
-    <section id="correct">
+    <div id="correct">
         <div id="correct-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -152,10 +152,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- No answer selected modal -->
-    <section id="select">
+    <div id="select">
         <div id="select-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -171,10 +171,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Incorrect answer modal -->
-    <section id="incorrect">
+    <div id="incorrect">
         <div id="incorrect-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -192,10 +192,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- End game modal -->
-    <section id="end-game">
+    <div id="end-game">
         <div id="end-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -210,7 +210,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Font Awesome embed code -->
     <script src="https://kit.fontawesome.com/8e292ce701.js" crossorigin="anonymous"></script>
