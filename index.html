@@ -31,16 +31,16 @@
     <div id="question">
         <div class="question-container">
             <div id="first-colour" class="box">
-                <span class="question-colour-text"></span>
+                <span id="first-colour-text"></span>
             </div>
             <i class="fas fa-plus"></i>
             <div id="second-colour" class="box">
-                <span class="question-colour-text"></span>
+                <span id="second-colour-text"></span>
             </div>
             <i class="fas fa-equals"></i>
             <div id="answer" class="box">
                 <i id="question-mark" class="fas fa-question"></i>
-                <span class="question-colour-text"></span>
+                <span id="answer-colour-text"></span>
             </div>
         </div>
         <button id="submit" data-type="submit" class="btn">Submit Answer</button>
@@ -81,7 +81,7 @@
 
     <!-- Current score -->
     <div id="score">
-        <p>Score: <span id="current-score"></span> / <span id="questions-answered"></span></p>
+        <p>Score: <span id="score-span"></span> / <span id="questions-answered-span"></span></p>
     </div>
 
     <!-- Instructions and reset buttons -->
@@ -206,7 +206,7 @@
                     <p>You have finished the quiz</p>
                 </div>
                 <div class="modal-footer">
-                    <h3>You scored <span id="end-score"></span> / 9</h3>
+                    <h3>You scored <span id="end-score-span"></span> / 9</h3>
                 </div>
             </div>
         </div>

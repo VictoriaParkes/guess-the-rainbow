@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const gridItems = document.querySelectorAll(".grid-item");
+    questionBoxes.forEach((box) => {
+        box.addEventListener("mouseover", mouseOver);
+    });
+
     gridItems.forEach((gridItem) => {
         gridItem.addEventListener("click", () => {
             userAnswerHandler(gridItem);
@@ -26,43 +29,75 @@ document.addEventListener("DOMContentLoaded", function () {
         reset();
     });
 
-    const questionBoxes = document.querySelectorAll(".box");
-    questionBoxes.forEach((box) => {
-        box.addEventListener("mouseover", mouseOver);
-    });
-
     welcome();
 });
 
 // Add variable for question counter
 let currentQuestion = 0;
-// Add variable for correct answer with no defined value
-let correctAnswer;
-// Get question mark html element
-let questionMark = document.getElementById("question-mark");
-// Add variable for score counter
-let score = 0;
 // Add variable for questions answered counter
 let questionsAnswered = 0;
+// Add variable for score counter
+let score = 0;
 
+// Add variables with no defined value to set dynamically during the game
+let firstText;
+let secondText;
+let correctAnswer;
+let correctText;
+
+// Question elements
+const firstColourBox = document.getElementById("first-colour");
+const secondColourBox = document.getElementById("second-colour");
+const answerBox = document.getElementById("answer");
+const questionMark = document.getElementById("question-mark");
+const firstTextSpan = document.getElementById("first-colour-text");
+const secondTextSpan = document.getElementById("second-colour-text");
+const answerTextSpan = document.getElementById("answer-colour-text");
+const questionBoxes = document.querySelectorAll(".box");
+
+// Score elements
+const scoreSpan = document.getElementById("score-span");
+const questionsAnsweredSpan = document.getElementById("questions-answered-span")
+
+// Answer options grid elements
+const gridItems = document.querySelectorAll(".grid-item");
+
+// Modal elements
 const welcomeModal = document.getElementById("welcome-modal");
 const instructionsModal = document.getElementById("instructions-modal");
 const correctModal = document.getElementById("correct-modal");
 const selectModal = document.getElementById("select-modal");
 const incorrectModal = document.getElementById("incorrect-modal");
 const endModal = document.getElementById("end-modal");
+const close = document.getElementsByClassName("close");
+const correctAnswerColour = document.getElementById("correct-answer-colour");
+const correctAnswerText = document.getElementById("correct-answer-text");
+const endScoreSpan = document.getElementById("end-score-span");
 
-// Set questions and answers in an array using key value pairs
+// Set questions and answers
 const questions = [
-    { firstColour: "red", secondColour: "blue", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "blue", secondColour: "white", correctAnswer: "rgb(173, 216, 230)" },
-    { firstColour: "blue", secondColour: "yellow", correctAnswer: "rgb(0, 128, 0)" },
-    { firstColour: "red", secondColour: "white", correctAnswer: "rgb(255, 192, 203)" },
-    { firstColour: "yellow", secondColour: "black", correctAnswer: "rgb(128, 128, 0)" },
-    { firstColour: "red", secondColour: "yellow", correctAnswer: "rgb(255, 165, 0)" },
-    { firstColour: "red", secondColour: "black", correctAnswer: "rgb(139, 0, 0)" },
-    { firstColour: "blue", secondColour: "black", correctAnswer: "rgb(0, 0, 139)" },
-    { firstColour: "yellow", secondColour: "white", correctAnswer: "rgb(255, 255, 166)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 255)", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(173, 216, 230)" },
+    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(0, 128, 0)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 192, 203)" },
+    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(128, 128, 0)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(255, 165, 0)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(139, 0, 0)" },
+    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(0, 0, 139)" },
+    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 255, 166)" },
+]
+
+// Set text answers
+const hoverTexts = [
+    { firstText: "red", secondText: "blue", correctText: "purple" },
+    { firstText: "blue", secondText: "white", correctText: "light blue" },
+    { firstText: "blue", secondText: "yellow", correctText: "green" },
+    { firstText: "red", secondText: "white", correctText: "pink" },
+    { firstText: "yellow", secondText: "black", correctText: "dark yellow" },
+    { firstText: "red", secondText: "yellow", correctText: "orange" },
+    { firstText: "red", secondText: "black", correctText: "dark red" },
+    { firstText: "blue", secondText: "black", correctText: "dark blue" },
+    { firstText: "yellow", secondText: "white", correctText: "light yellow" },
 ]
 
 /**
@@ -71,39 +106,40 @@ const questions = [
  * a question mark.
 */
 function displayQuestion() {
-    let firstColourBox = document.getElementById("first-colour");
-    let secondColourBox = document.getElementById("second-colour");
-
     let question = questions[currentQuestion];
-    firstColourBox.style.backgroundColor = question.firstColour;
-    secondColourBox.style.backgroundColor = question.secondColour;
-    correctAnswer = question.correctAnswer;
+    let hoverText = hoverTexts[currentQuestion];
 
-    document.getElementById("answer").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    firstColourBox.style.backgroundColor = question.firstColour;
+    firstText = hoverText.firstText;
+
+    secondColourBox.style.backgroundColor = question.secondColour;
+    secondText = hoverText.secondText;
+
+    correctAnswer = question.correctAnswer;
+    correctText = hoverText.correctText;
+
+    answerBox.style.backgroundColor = "rgba(0, 0, 0, 0)";
     questionMark.style.visibility = "visible";
 }
 
 function runGame() {
     if (questionsAnswered >= "9") {
+        // End game when 9 questions answered
         endGame();
     } else {
         displayQuestion(currentQuestion);
         // Set score
-        document.getElementById("current-score").innerHTML = score;
+        scoreSpan.innerHTML = score;
         // Set questions answered
-        document.getElementById("questions-answered").innerHTML = questionsAnswered;
+        questionsAnsweredSpan.innerHTML = questionsAnswered;
     }
 }
 
-// Set answer span element background colour
+// Set answer box span background colour
 function userAnswerHandler(gridItem) {
-    // Store clicked element style properties in variable
     let optionStyle = getComputedStyle(gridItem);
-    // Store background colour property in variable
     let color = optionStyle.backgroundColor;
-    // Use color variable to set answer span background colour
-    document.getElementById("answer").style.backgroundColor = color;
-    // Hide question mark
+    answerBox.style.backgroundColor = color;
     questionMark.style.visibility = "hidden";
 }
 
@@ -116,11 +152,8 @@ function userAnswerHandler(gridItem) {
  * if user answer is incorrect.
 */
 function checkAnswer() {
-    let answerBox = document.getElementById("answer");
     let answerStyle = window.getComputedStyle(answerBox, null);
-
     let userAnswer = answerStyle.getPropertyValue("background-color");
-
     let answerCheck = userAnswer === correctAnswer;
 
     if (answerCheck) {
@@ -140,26 +173,23 @@ function incrementQuestion() {
 // Increment the score value by 1
 function increaseScore() {
     score++;
-    document.getElementById("current-score").innerHTML = score;
+    scoreSpan.innerHTML = score;
 }
 
 // Increment the questions answered by 1
 function increaseQuestionsAnswered() {
     questionsAnswered++;
-    document.getElementById("questions-answered").innerHTML = questionsAnswered;
+    questionsAnsweredSpan.innerHTML = questionsAnswered;
 }
 
 // Display and close the welcome modal
 function welcome() {
-    let close = document.getElementsByClassName("close")[0];
     welcomeModal.style.display = "flex";
 
-    // Close the modal when the user clicks x
-    close.onclick = function () {
+    close[0].onclick = function () {
         closeWelcome();
     }
 
-    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === welcomeModal) {
             closeWelcome();
@@ -174,15 +204,12 @@ function closeWelcome() {
 
 // Display and close the instructions modal
 function instructions() {
-    let close = document.getElementsByClassName("close")[1];
     instructionsModal.style.display = "flex";
 
-    // Close the modal when the user clicks x
-    close.onclick = function () {
+    close[1].onclick = function () {
         closeModal();
     }
 
-    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === instructionsModal) {
             closeModal();
@@ -197,14 +224,11 @@ function closeModal() {
 
 // Display and close the correct answer modal
 function correct() {
-    let close = document.getElementsByClassName("close")[2];
     correctModal.style.display = "flex";
 
-    // Close the modal when the user clicks x
-    close.onclick = function () {
+    close[2].onclick = function () {
         closeCorrect();
     }
-    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === correctModal) {
             closeCorrect();
@@ -222,14 +246,11 @@ function closeCorrect() {
 
 // Display and close the select answer modal
 function notAnswered() {
-    let close = document.getElementsByClassName("close")[3];
     selectModal.style.display = "flex";
 
-    // Close the modal when the user clicks x
-    close.onclick = function () {
+    close[3].onclick = function () {
         closeModal();
     }
-    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === selectModal) {
             closeModal();
@@ -239,15 +260,12 @@ function notAnswered() {
 
 // Display and close the incorrect answer modal
 function incorrect() {
-    let close = document.getElementsByClassName("close")[4];
     displayCorrectAnswer();
     incorrectModal.style.display = "flex";
 
-    // Close the modal when the user clicks x
-    close.onclick = function () {
+    close[4].onclick = function () {
         closeIncorrect();
     }
-    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === incorrectModal) {
             closeIncorrect();
@@ -262,18 +280,21 @@ function closeIncorrect() {
     runGame(currentQuestion);
 }
 
+// Inform the user of the correct answer in the incorrect answer modal
+function displayCorrectAnswer() {
+    correctAnswerColour.style.backgroundColor = correctAnswer;
+    correctAnswerText.innerHTML = correctText;
+}
+
 // Display and close the end game modal
 function endGame() {
-    document.getElementById("end-score").innerHTML = score;
+    endScoreSpan.innerHTML = score;
 
-    let close = document.getElementsByClassName("close")[5];
     endModal.style.display = "flex";
 
-    // Close the modal when the user clicks x
-    close.onclick = function () {
+    close[5].onclick = function () {
         closeEnd();
     }
-    // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === endModal) {
             closeEnd();
@@ -286,34 +307,6 @@ function closeEnd() {
     reset();
 }
 
-// Inform the user of the correct answer in the incorrect answer modal
-function displayCorrectAnswer() {
-    let correctAnswerColour = document.getElementById("correct-answer-colour");
-    let correctAnswerText = document.getElementById("correct-answer-text");
-
-    correctAnswerColour.style.backgroundColor = correctAnswer;
-
-    if (correctAnswer === "rgb(128, 0, 128)") {
-        correctAnswerText.innerHTML = "purple";
-    } else if (correctAnswer === "rgb(173, 216, 230)") {
-        correctAnswerText.innerHTML = "light blue";
-    } else if (correctAnswer === "rgb(0, 128, 0)") {
-        correctAnswerText.innerHTML = "green";
-    } else if (correctAnswer === "rgb(255, 192, 203)") {
-        correctAnswerText.innerHTML = "pink";
-    } else if (correctAnswer === "rgb(128, 128, 0)") {
-        correctAnswerText.innerHTML = "dark yellow";
-    } else if (correctAnswer === "rgb(255, 165, 0)") {
-        correctAnswerText.innerHTML = "orange";
-    } else if (correctAnswer === "rgb(139, 0, 0)") {
-        correctAnswerText.innerHTML = "dark red";
-    } else if (correctAnswer === "rgb(0, 0, 139)") {
-        correctAnswerText.innerHTML = "dark blue";
-    } else if (correctAnswer === "rgb(255, 255, 166)") {
-        correctAnswerText.innerHTML = "light yellow";
-    }
-}
-
 // Reset the game
 function reset() {
     currentQuestion = 0;
@@ -322,61 +315,50 @@ function reset() {
     runGame();
 }
 
-// Display colour text when question span hovered over
+// Display colour text when question spans hovered over
 function mouseOver() {
-    let boxStyle = window.getComputedStyle(this, null);
-    let boxColour = boxStyle.getPropertyValue("background-color");
-    let questionBoxSpan = document.querySelectorAll(".question-colour-text");
+    let hoverText = hoverTexts[currentQuestion];
+    firstTextSpan.innerHTML = hoverText.firstText;
+    secondTextSpan.innerHTML = hoverText.secondText;
+    firstTextSpan.style.visibility = "visible";
+    secondTextSpan.style.visibility = "visible";
 
-    questionBoxSpan.forEach((span) => {
-        if (boxColour === "rgb(255, 0, 0)") {
-            span.innerHTML = "Red";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(0, 0, 255)") {
-            span.innerHTML = "Blue";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(255, 255, 0)") {
-            span.innerHTML = "Yellow";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(255, 255, 255)") {
-            span.innerHTML = "White";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(0, 0, 0)") {
-            span.innerHTML = "Black";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(255, 165, 0)") {
-            span.innerHTML = "Orange";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(0, 128, 0)") {
-            span.innerHTML = "Green";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(128, 0, 128)") {
-            span.innerHTML = "Purple";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(255, 192, 203)") {
-            span.innerHTML = "Pink";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(173, 216, 230)") {
-            span.innerHTML = "Light Blue";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(255, 255, 166)") {
-            span.innerHTML = "Light Yellow";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(139, 0, 0)") {
-            span.innerHTML = "Dark Red";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(0, 0, 139)") {
-            span.innerHTML = "Dark Blue";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgb(128, 128, 0)") {
-            span.innerHTML = "Dark Yellow";
-            span.style.visibility = "visible";
-        } else if (boxColour === "rgba(0, 0, 0, 0)") {
-            span.style.visibility = "hidden";
-        }
-    });
+    let boxStyle = window.getComputedStyle(answerBox, null);
+    let boxColour = boxStyle.getPropertyValue("background-color");
+
+    if (boxColour === "rgb(255, 165, 0)") {
+        answerTextSpan.innerHTML = "Orange";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(0, 128, 0)") {
+        answerTextSpan.innerHTML = "Green";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(128, 0, 128)") {
+        answerTextSpan.innerHTML = "Purple";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(255, 192, 203)") {
+        answerTextSpan.innerHTML = "Pink";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(173, 216, 230)") {
+        answerTextSpan.innerHTML = "Light Blue";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(255, 255, 166)") {
+        answerTextSpan.innerHTML = "Light Yellow";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(139, 0, 0)") {
+        answerTextSpan.innerHTML = "Dark Red";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(0, 0, 139)") {
+        answerTextSpan.innerHTML = "Dark Blue";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgb(128, 128, 0)") {
+        answerTextSpan.innerHTML = "Dark Yellow";
+        answerTextSpan.style.visibility = "visible";
+    } else if (boxColour === "rgba(0, 0, 0, 0)") {
+        answerTextSpan.style.visibility = "hidden";
+    }
 }
 
+// Close modal or check answer when enter key pressed
 function enterKey() {
     let welcomeStyle = window.getComputedStyle(welcomeModal, null);
     let welcomeDisplay = welcomeStyle.getPropertyValue("display");

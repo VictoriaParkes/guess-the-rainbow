@@ -172,7 +172,9 @@ and capitalize hover text */
 /* Style rule to hide hover text by default, 
 display centered over grid-item when displayed, 
 and set background colour and add border */
-.question-colour-text,
+#first-colour-text,
+#second-colour-text,
+#answer-colour-text,
 .colour-text {
     display: none;
     position: absolute;
@@ -186,7 +188,9 @@ and set background colour and add border */
 }
 
 /* Style rule to display text when hovered over */
-.box:hover .question-colour-text,
+.box:hover #first-colour-text,
+.box:hover #second-colour-text,
+.box:hover #answer-colour-text,
 .grid-item:hover .colour-text {
     display: unset;
 }
@@ -338,7 +342,9 @@ and capitalize text */
         font-size: 3.5rem;
     }
 
-    .question-colour-text {
+    #first-colour-text,
+    #second-colour-text,
+    #answer-colour-text {
         top: -50%;
     }
 }
@@ -370,7 +376,9 @@ and capitalize text */
         font-size: 2.5rem;
     }
 
-    .question-colour-text {
+    #first-colour-text,
+    #second-colour-text,
+    #answer-colour-text {
         top: -70%;
     }
 }
