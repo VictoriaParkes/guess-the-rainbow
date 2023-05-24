@@ -318,6 +318,7 @@ function reset() {
 // Display colour text when question spans hovered over
 function mouseOver() {
     let hoverText = hoverTexts[currentQuestion];
+    let answer = questions;
     firstTextSpan.innerHTML = hoverText.firstText;
     secondTextSpan.innerHTML = hoverText.secondText;
     firstTextSpan.style.visibility = "visible";
@@ -326,32 +327,32 @@ function mouseOver() {
     let boxStyle = window.getComputedStyle(answerBox, null);
     let boxColour = boxStyle.getPropertyValue("background-color");
 
-    if (boxColour === "rgb(255, 165, 0)") {
-        answerTextSpan.innerHTML = "Orange";
+    if (boxColour === answer[0].correctAnswer) {
+        answerTextSpan.innerHTML = "purple";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(0, 128, 0)") {
-        answerTextSpan.innerHTML = "Green";
+    } else if (boxColour === answer[1].correctAnswer) {
+        answerTextSpan.innerHTML = "light Blue";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(128, 0, 128)") {
-        answerTextSpan.innerHTML = "Purple";
+    } else if (boxColour === answer[2].correctAnswer) {
+        answerTextSpan.innerHTML = "green";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(255, 192, 203)") {
-        answerTextSpan.innerHTML = "Pink";
+    } else if (boxColour === answer[3].correctAnswer) {
+        answerTextSpan.innerHTML = "pink";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(173, 216, 230)") {
-        answerTextSpan.innerHTML = "Light Blue";
+    } else if (boxColour === answer[4].correctAnswer) {
+        answerTextSpan.innerHTML = "dark yellow";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(255, 255, 166)") {
-        answerTextSpan.innerHTML = "Light Yellow";
+    } else if (boxColour === answer[5].correctAnswer) {
+        answerTextSpan.innerHTML = "orange";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(139, 0, 0)") {
-        answerTextSpan.innerHTML = "Dark Red";
+    } else if (boxColour === answer[6].correctAnswer) {
+        answerTextSpan.innerHTML = "dark red";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(0, 0, 139)") {
-        answerTextSpan.innerHTML = "Dark Blue";
+    } else if (boxColour === answer[7].correctAnswer) {
+        answerTextSpan.innerHTML = "dark blue";
         answerTextSpan.style.visibility = "visible";
-    } else if (boxColour === "rgb(128, 128, 0)") {
-        answerTextSpan.innerHTML = "Dark Yellow";
+    } else if (boxColour === answer[8].correctAnswer) {
+        answerTextSpan.innerHTML = "light yellow";
         answerTextSpan.style.visibility = "visible";
     } else if (boxColour === "rgba(0, 0, 0, 0)") {
         answerTextSpan.style.visibility = "hidden";
