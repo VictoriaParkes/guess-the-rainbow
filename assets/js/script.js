@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-            checkAnswer();
+            enterKey();
         }
     });
 
@@ -44,6 +44,13 @@ let questionMark = document.getElementById("question-mark");
 let score = 0;
 // Add variable for questions answered counter
 let questionsAnswered = 0;
+
+let welcomeModal = document.getElementById("welcome-modal");
+let instructionsModal = document.getElementById("instructions-modal");
+let correctModal = document.getElementById("correct-modal");
+let selectModal = document.getElementById("select-modal");
+let incorrectModal = document.getElementById("incorrect-modal");
+let endModal = document.getElementById("end-modal");
 
 // Set questions and answers in an array using key value pairs
 const questions = [
@@ -144,7 +151,6 @@ function increaseQuestionsAnswered() {
 
 // Display and close the welcome modal
 function welcome() {
-    let welcomeModal = document.getElementById("welcome-modal");
     let close = document.getElementsByClassName("close")[0];
     welcomeModal.style.display = "flex";
 
@@ -165,7 +171,6 @@ function welcome() {
 
 // Display and close the instructions modal
 function instructions() {
-    let instructionsModal = document.getElementById("instructions-modal");
     let close = document.getElementsByClassName("close")[1];
     instructionsModal.style.display = "flex";
 
@@ -184,7 +189,6 @@ function instructions() {
 
 // Display and close the correct answer modal
 function correct() {
-    let correctModal = document.getElementById("correct-modal");
     let close = document.getElementsByClassName("close")[2];
     correctModal.style.display = "flex";
 
@@ -210,7 +214,6 @@ function correct() {
 
 // Display and close the select answer modal
 function notAnswered() {
-    let selectModal = document.getElementById("select-modal");
     let close = document.getElementsByClassName("close")[3];
     selectModal.style.display = "flex";
 
@@ -228,7 +231,6 @@ function notAnswered() {
 
 // Display and close the incorrect answer modal
 function incorrect() {
-    let incorrectModal = document.getElementById("incorrect-modal");
     let close = document.getElementsByClassName("close")[4];
     displayCorrectAnswer();
     incorrectModal.style.display = "flex";
@@ -346,7 +348,6 @@ function mouseOver() {
 function endGame() {
     document.getElementById("end-score").innerHTML = score;
 
-    let endModal = document.getElementById("end-modal");
     let close = document.getElementsByClassName("close")[5];
     endModal.style.display = "flex";
 
@@ -361,5 +362,56 @@ function endGame() {
             endModal.style.display = "none";
             reset();
         }
+    }
+}
+
+function enterKey() {
+    let welcomeStyle = window.getComputedStyle(welcomeModal, null);
+    let welcomeDisplay = welcomeStyle.getPropertyValue("display");
+
+    let instructionsStyle = window.getComputedStyle(instructionsModal, null);
+    let instructionsDisplay = instructionsStyle.getPropertyValue("display");
+
+    let correctStyle = window.getComputedStyle(correctModal, null);
+    let correctDisplay = correctStyle.getPropertyValue("display");
+
+    let selectStyle = window.getComputedStyle(selectModal, null);
+    let selectDisplay = selectStyle.getPropertyValue("display");
+
+    let incorrectStyle = window.getComputedStyle(incorrectModal, null);
+    let incorrectDisplay = incorrectStyle.getPropertyValue("display");
+
+    let endStyle = window.getComputedStyle(endModal, null);
+    let endDisplay = endStyle.getPropertyValue("display");
+
+    if (welcomeDisplay === "flex") {
+        welcomeModal.style.display = "none";
+        console.log("CLOSE welcome");
+        runGame(currentQuestion);
+    } else if (instructionsDisplay === "flex") {
+        console.log("CLOSE instructions");
+        instructionsModal.style.display = "none";
+    } else if (correctDisplay === "flex") {
+        console.log("CLOSE correct");
+        correctModal.style.display = "none";
+        increaseScore();
+        increaseQuestionsAnswered();
+        incrementQuestion();
+        runGame(currentQuestion);
+    } else if (selectDisplay === "flex") {
+        console.log("CLOSE select");
+        selectModal.style.display = "none";
+    } else if (incorrectDisplay === "flex") {
+        console.log("CLOSE incorrect");
+        incorrectModal.style.display = "none";
+        incrementQuestion();
+        increaseQuestionsAnswered();
+        runGame(currentQuestion);
+    } else if (endDisplay === "flex") {
+        console.log("CLOSE end");
+        endModal.style.display = "none";
+        reset();
+    } else {
+        checkAnswer();
     }
 }
