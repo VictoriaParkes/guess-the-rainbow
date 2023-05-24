@@ -124,7 +124,6 @@ and capitalize hover text */
     padding: 30px;
     position: relative;
     display: inline-block;
-    text-transform: capitalize;
 }
 
 /* Style rules to set background colour of grid-items */
@@ -185,6 +184,7 @@ and set background colour and add border */
     background-color: white;
     border: 2px solid #333e49;
     padding: 2px;
+    text-transform: capitalize;
 }
 
 /* Style rule to display text when hovered over */
