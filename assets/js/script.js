@@ -45,12 +45,12 @@ let score = 0;
 // Add variable for questions answered counter
 let questionsAnswered = 0;
 
-let welcomeModal = document.getElementById("welcome-modal");
-let instructionsModal = document.getElementById("instructions-modal");
-let correctModal = document.getElementById("correct-modal");
-let selectModal = document.getElementById("select-modal");
-let incorrectModal = document.getElementById("incorrect-modal");
-let endModal = document.getElementById("end-modal");
+const welcomeModal = document.getElementById("welcome-modal");
+const instructionsModal = document.getElementById("instructions-modal");
+const correctModal = document.getElementById("correct-modal");
+const selectModal = document.getElementById("select-modal");
+const incorrectModal = document.getElementById("incorrect-modal");
+const endModal = document.getElementById("end-modal");
 
 // Set questions and answers in an array using key value pairs
 const questions = [
@@ -156,17 +156,20 @@ function welcome() {
 
     // Close the modal when the user clicks x
     close.onclick = function () {
-        welcomeModal.style.display = "none";
-        runGame(currentQuestion);
+        closeWelcome();
     }
 
     // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === welcomeModal) {
-            welcomeModal.style.display = "none";
-            runGame(currentQuestion);
+            closeWelcome();
         }
     }
+}
+
+function closeWelcome() {
+    welcomeModal.style.display = "none";
+    runGame(currentQuestion);
 }
 
 // Display and close the instructions modal
@@ -176,15 +179,20 @@ function instructions() {
 
     // Close the modal when the user clicks x
     close.onclick = function () {
-        instructionsModal.style.display = "none";
+        closeModal();
     }
 
     // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === instructionsModal) {
-            instructionsModal.style.display = "none";
+            closeModal();
         }
     }
+}
+
+function closeModal() {
+    instructionsModal.style.display = "none";
+    selectModal.style.display = "none";
 }
 
 // Display and close the correct answer modal
@@ -194,22 +202,22 @@ function correct() {
 
     // Close the modal when the user clicks x
     close.onclick = function () {
-        correctModal.style.display = "none";
-        increaseScore();
-        increaseQuestionsAnswered();
-        incrementQuestion();
-        runGame(currentQuestion);
+        closeCorrect();
     }
     // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === correctModal) {
-            correctModal.style.display = "none";
-            increaseScore();
-            increaseQuestionsAnswered();
-            incrementQuestion();
-            runGame(currentQuestion);
+            closeCorrect();
         }
     }
+}
+
+function closeCorrect() {
+    correctModal.style.display = "none";
+    increaseScore();
+    increaseQuestionsAnswered();
+    incrementQuestion();
+    runGame(currentQuestion);
 }
 
 // Display and close the select answer modal
@@ -219,12 +227,12 @@ function notAnswered() {
 
     // Close the modal when the user clicks x
     close.onclick = function () {
-        selectModal.style.display = "none";
+        closeModal();
     }
     // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === selectModal) {
-            selectModal.style.display = "none";
+            closeModal();
         }
     }
 }
@@ -237,20 +245,45 @@ function incorrect() {
 
     // Close the modal when the user clicks x
     close.onclick = function () {
-        incorrectModal.style.display = "none";
-        incrementQuestion();
-        increaseQuestionsAnswered();
-        runGame(currentQuestion);
+        closeIncorrect();
     }
     // Close the modal when the user clicks outside the modal
     window.onclick = function (event) {
         if (event.target === incorrectModal) {
-            incorrectModal.style.display = "none";
-            incrementQuestion();
-            increaseQuestionsAnswered();
-            runGame(currentQuestion);
+            closeIncorrect();
         }
     }
+}
+
+function closeIncorrect() {
+    incorrectModal.style.display = "none";
+    incrementQuestion();
+    increaseQuestionsAnswered();
+    runGame(currentQuestion);
+}
+
+// Display and close the end game modal
+function endGame() {
+    document.getElementById("end-score").innerHTML = score;
+
+    let close = document.getElementsByClassName("close")[5];
+    endModal.style.display = "flex";
+
+    // Close the modal when the user clicks x
+    close.onclick = function () {
+        closeEnd();
+    }
+    // Close the modal when the user clicks outside the modal
+    window.onclick = function (event) {
+        if (event.target === endModal) {
+            closeEnd();
+        }
+    }
+}
+
+function closeEnd() {
+    endModal.style.display = "none";
+    reset();
 }
 
 // Inform the user of the correct answer in the incorrect answer modal
@@ -344,27 +377,6 @@ function mouseOver() {
     });
 }
 
-// Display and close the end game modal
-function endGame() {
-    document.getElementById("end-score").innerHTML = score;
-
-    let close = document.getElementsByClassName("close")[5];
-    endModal.style.display = "flex";
-
-    // Close the modal when the user clicks x
-    close.onclick = function () {
-        endModal.style.display = "none";
-        reset();
-    }
-    // Close the modal when the user clicks outside the modal
-    window.onclick = function (event) {
-        if (event.target === endModal) {
-            endModal.style.display = "none";
-            reset();
-        }
-    }
-}
-
 function enterKey() {
     let welcomeStyle = window.getComputedStyle(welcomeModal, null);
     let welcomeDisplay = welcomeStyle.getPropertyValue("display");
@@ -385,32 +397,23 @@ function enterKey() {
     let endDisplay = endStyle.getPropertyValue("display");
 
     if (welcomeDisplay === "flex") {
-        welcomeModal.style.display = "none";
+        closeWelcome();
         console.log("CLOSE welcome");
-        runGame(currentQuestion);
     } else if (instructionsDisplay === "flex") {
         console.log("CLOSE instructions");
-        instructionsModal.style.display = "none";
+        closeModal();
     } else if (correctDisplay === "flex") {
         console.log("CLOSE correct");
-        correctModal.style.display = "none";
-        increaseScore();
-        increaseQuestionsAnswered();
-        incrementQuestion();
-        runGame(currentQuestion);
+        closeCorrect();
     } else if (selectDisplay === "flex") {
         console.log("CLOSE select");
-        selectModal.style.display = "none";
+        closeModal();
     } else if (incorrectDisplay === "flex") {
         console.log("CLOSE incorrect");
-        incorrectModal.style.display = "none";
-        incrementQuestion();
-        increaseQuestionsAnswered();
-        runGame(currentQuestion);
+        closeIncorrect();
     } else if (endDisplay === "flex") {
         console.log("CLOSE end");
-        endModal.style.display = "none";
-        reset();
+        closeEnd();
     } else {
         checkAnswer();
     }
