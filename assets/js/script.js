@@ -1,21 +1,28 @@
-// Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
-document.addEventListener("DOMContentLoaded", function () {
-    eventListeners();
-    welcome();
-});
+// Questions and answers data
+const questions = [
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 255)", correctAnswer: "rgb(128, 0, 128)" },
+    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(173, 216, 230)" },
+    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(0, 128, 0)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 192, 203)" },
+    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(128, 128, 0)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(255, 165, 0)" },
+    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(139, 0, 0)" },
+    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(0, 0, 139)" },
+    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 255, 166)" },
+]
 
-// Add variable for question counter
-let currentQuestion = 0;
-// Add variable for questions answered counter
-let questionsAnswered = 0;
-// Add variable for score counter
-let score = 0;
-
-// Add variables with no defined value to set dynamically during the game
-let firstText;
-let secondText;
-let correctAnswer;
-let correctText;
+// innerHTML text data
+const hoverTexts = [
+    { firstText: "red", secondText: "blue", correctText: "purple" },
+    { firstText: "blue", secondText: "white", correctText: "light blue" },
+    { firstText: "blue", secondText: "yellow", correctText: "green" },
+    { firstText: "red", secondText: "white", correctText: "pink" },
+    { firstText: "yellow", secondText: "black", correctText: "dark yellow" },
+    { firstText: "red", secondText: "yellow", correctText: "orange" },
+    { firstText: "red", secondText: "black", correctText: "dark red" },
+    { firstText: "blue", secondText: "black", correctText: "dark blue" },
+    { firstText: "yellow", secondText: "white", correctText: "light yellow" },
+]
 
 // Question elements
 const firstColourBox = document.getElementById("first-colour");
@@ -51,31 +58,24 @@ const correctAnswerColour = document.getElementById("correct-answer-colour");
 const correctAnswerText = document.getElementById("correct-answer-text");
 const endScoreSpan = document.getElementById("end-score-span");
 
-// Set questions and answers
-const questions = [
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 255)", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(173, 216, 230)" },
-    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(0, 128, 0)" },
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 192, 203)" },
-    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(128, 128, 0)" },
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(255, 165, 0)" },
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(139, 0, 0)" },
-    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(0, 0, 139)" },
-    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 255, 166)" },
-]
+// Add variable for question counter
+let currentQuestion = 0;
+// Add variable for questions answered counter
+let questionsAnswered = 0;
+// Add variable for score counter
+let score = 0;
 
-// Set text answers
-const hoverTexts = [
-    { firstText: "red", secondText: "blue", correctText: "purple" },
-    { firstText: "blue", secondText: "white", correctText: "light blue" },
-    { firstText: "blue", secondText: "yellow", correctText: "green" },
-    { firstText: "red", secondText: "white", correctText: "pink" },
-    { firstText: "yellow", secondText: "black", correctText: "dark yellow" },
-    { firstText: "red", secondText: "yellow", correctText: "orange" },
-    { firstText: "red", secondText: "black", correctText: "dark red" },
-    { firstText: "blue", secondText: "black", correctText: "dark blue" },
-    { firstText: "yellow", secondText: "white", correctText: "light yellow" },
-]
+// Add variables with no defined value to set dynamically during the game
+let firstText;
+let secondText;
+let correctAnswer;
+let correctText;
+
+// Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
+document.addEventListener("DOMContentLoaded", function () {
+    eventListeners();
+    welcome();
+});
 
 function eventListeners() {
     submit.addEventListener("click", checkAnswer);
