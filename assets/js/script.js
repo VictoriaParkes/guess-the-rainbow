@@ -1,13 +1,14 @@
 // Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
 document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById("submit").addEventListener("click", function () {
+    submit.addEventListener("click", function () {
         checkAnswer();
     });
 
     document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             enterKey();
+            console.log("enter event listener");
         }
     });
 
@@ -21,9 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    document.getElementById("instructions-btn").addEventListener("click", function () {
-        instructions();
-    });
+    instructionsButton.addEventListener("click", instructions);
 
     document.getElementById("reset-btn").addEventListener("click", function () {
         reset();
@@ -54,6 +53,7 @@ const firstTextSpan = document.getElementById("first-colour-text");
 const secondTextSpan = document.getElementById("second-colour-text");
 const answerTextSpan = document.getElementById("answer-colour-text");
 const questionBoxes = document.querySelectorAll(".box");
+const submitButton = document.getElementById("submit");
 
 // Score elements
 const scoreSpan = document.getElementById("score-span");
@@ -61,6 +61,9 @@ const questionsAnsweredSpan = document.getElementById("questions-answered-span")
 
 // Answer options grid elements
 const gridItems = document.querySelectorAll(".grid-item");
+
+// Instructions button
+const instructionsButton = document.getElementById("instructions-btn");
 
 // Modal elements
 const welcomeModal = document.getElementById("welcome-modal");
@@ -159,10 +162,12 @@ function checkAnswer() {
     if (answerCheck) {
         correct();
     } else if (userAnswer === "rgba(0, 0, 0, 0)") {
-        notAnswered();
+        select();
     } else {
         incorrect();
     }
+    
+    console.log("Check answer function");
 }
 
 // Increment the current question value by 1
@@ -205,26 +210,29 @@ function closeWelcome() {
 // Display and close the instructions modal
 function instructions() {
     instructionsModal.style.display = "flex";
+    instructionsButton.blur();
+    console.log("display instructions");
 
     close[1].onclick = function () {
-        closeModal();
+        closeInstructions();
     }
 
     window.onclick = function (event) {
         if (event.target === instructionsModal) {
-            closeModal();
+            closeInstructions();
         }
     }
 }
 
-function closeModal() {
+function closeInstructions() {
     instructionsModal.style.display = "none";
-    selectModal.style.display = "none";
+    console.log("closeInstructions function");
 }
 
 // Display and close the correct answer modal
 function correct() {
     correctModal.style.display = "flex";
+    submitButton.blur();
 
     close[2].onclick = function () {
         closeCorrect();
@@ -245,23 +253,30 @@ function closeCorrect() {
 }
 
 // Display and close the select answer modal
-function notAnswered() {
+function select() {
     selectModal.style.display = "flex";
+    submitButton.blur();
 
     close[3].onclick = function () {
-        closeModal();
+        closeSelect();
     }
     window.onclick = function (event) {
         if (event.target === selectModal) {
-            closeModal();
+            closeSelect();
         }
     }
+}
+
+function closeSelect() {
+    selectModal.style.display = "none";
+    console.log("closeSelect function");
 }
 
 // Display and close the incorrect answer modal
 function incorrect() {
     displayCorrectAnswer();
     incorrectModal.style.display = "flex";
+    submitButton.blur();
 
     close[4].onclick = function () {
         closeIncorrect();
@@ -361,22 +376,23 @@ function mouseOver() {
 
 // Close modal or check answer when enter key pressed
 function enterKey() {
-    let welcomeStyle = window.getComputedStyle(welcomeModal, null);
+
+    let welcomeStyle = window.getComputedStyle(welcomeModal);
     let welcomeDisplay = welcomeStyle.getPropertyValue("display");
 
-    let instructionsStyle = window.getComputedStyle(instructionsModal, null);
+    let instructionsStyle = window.getComputedStyle(instructionsModal);
     let instructionsDisplay = instructionsStyle.getPropertyValue("display");
 
-    let correctStyle = window.getComputedStyle(correctModal, null);
+    let correctStyle = window.getComputedStyle(correctModal);
     let correctDisplay = correctStyle.getPropertyValue("display");
 
-    let selectStyle = window.getComputedStyle(selectModal, null);
+    let selectStyle = window.getComputedStyle(selectModal);
     let selectDisplay = selectStyle.getPropertyValue("display");
 
-    let incorrectStyle = window.getComputedStyle(incorrectModal, null);
+    let incorrectStyle = window.getComputedStyle(incorrectModal);
     let incorrectDisplay = incorrectStyle.getPropertyValue("display");
 
-    let endStyle = window.getComputedStyle(endModal, null);
+    let endStyle = window.getComputedStyle(endModal);
     let endDisplay = endStyle.getPropertyValue("display");
 
     if (welcomeDisplay === "flex") {
@@ -384,13 +400,13 @@ function enterKey() {
         console.log("CLOSE welcome");
     } else if (instructionsDisplay === "flex") {
         console.log("CLOSE instructions");
-        closeModal();
+        instructionsModal.style.display = "none";
     } else if (correctDisplay === "flex") {
         console.log("CLOSE correct");
         closeCorrect();
     } else if (selectDisplay === "flex") {
         console.log("CLOSE select");
-        closeModal();
+        closeSelect();
     } else if (incorrectDisplay === "flex") {
         console.log("CLOSE incorrect");
         closeIncorrect();
