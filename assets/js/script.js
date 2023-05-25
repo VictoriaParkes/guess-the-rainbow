@@ -1,33 +1,6 @@
 // Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
 document.addEventListener("DOMContentLoaded", function () {
-
-    submit.addEventListener("click", function () {
-        checkAnswer();
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            enterKey();
-            console.log("enter event listener");
-        }
-    });
-
-    questionBoxes.forEach((box) => {
-        box.addEventListener("mouseover", mouseOver);
-    });
-
-    gridItems.forEach((gridItem) => {
-        gridItem.addEventListener("click", () => {
-            userAnswerHandler(gridItem);
-        })
-    });
-
-    instructionsButton.addEventListener("click", instructions);
-
-    document.getElementById("reset-btn").addEventListener("click", function () {
-        reset();
-    });
-
+    eventListeners();
     welcome();
 });
 
@@ -53,7 +26,6 @@ const firstTextSpan = document.getElementById("first-colour-text");
 const secondTextSpan = document.getElementById("second-colour-text");
 const answerTextSpan = document.getElementById("answer-colour-text");
 const questionBoxes = document.querySelectorAll(".box");
-const submitButton = document.getElementById("submit");
 
 // Score elements
 const scoreSpan = document.getElementById("score-span");
@@ -62,8 +34,10 @@ const questionsAnsweredSpan = document.getElementById("questions-answered-span")
 // Answer options grid elements
 const gridItems = document.querySelectorAll(".grid-item");
 
-// Instructions button
+// Buttons
+const submitButton = document.getElementById("submit");
 const instructionsButton = document.getElementById("instructions-btn");
+const resetButton = document.getElementById("reset-btn");
 
 // Modal elements
 const welcomeModal = document.getElementById("welcome-modal");
@@ -102,6 +76,31 @@ const hoverTexts = [
     { firstText: "blue", secondText: "black", correctText: "dark blue" },
     { firstText: "yellow", secondText: "white", correctText: "light yellow" },
 ]
+
+function eventListeners() {
+    submit.addEventListener("click", checkAnswer);
+    
+    instructionsButton.addEventListener("click", instructions);
+
+    resetButton.addEventListener("click", reset);
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            enterKey();
+            console.log("enter event listener");
+        }
+    });
+
+    questionBoxes.forEach((box) => {
+        box.addEventListener("mouseover", mouseOver);
+    });
+
+    gridItems.forEach((gridItem) => {
+        gridItem.addEventListener("click", () => {
+            userAnswerHandler(gridItem);
+        })
+    });
+}
 
 /**
  * Displays the current question, sets the correct answer
@@ -166,7 +165,7 @@ function checkAnswer() {
     } else {
         incorrect();
     }
-    
+
     console.log("Check answer function");
 }
 
