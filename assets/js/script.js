@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function eventListeners() {
     submit.addEventListener("click", checkAnswer);
-    
+
     instructionsButton.addEventListener("click", instructions);
 
     resetButton.addEventListener("click", reset);
@@ -87,7 +87,6 @@ function eventListeners() {
     document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             enterKey();
-            console.log("enter event listener");
         }
     });
 
@@ -165,8 +164,6 @@ function checkAnswer() {
     } else {
         incorrect();
     }
-
-    console.log("Check answer function");
 }
 
 // Increment the current question value by 1
@@ -210,7 +207,6 @@ function closeWelcome() {
 function instructions() {
     instructionsModal.style.display = "flex";
     instructionsButton.blur();
-    console.log("display instructions");
 
     close[1].onclick = function () {
         closeInstructions();
@@ -225,7 +221,6 @@ function instructions() {
 
 function closeInstructions() {
     instructionsModal.style.display = "none";
-    console.log("closeInstructions function");
 }
 
 // Display and close the correct answer modal
@@ -268,7 +263,6 @@ function select() {
 
 function closeSelect() {
     selectModal.style.display = "none";
-    console.log("closeSelect function");
 }
 
 // Display and close the incorrect answer modal
@@ -396,21 +390,15 @@ function enterKey() {
 
     if (welcomeDisplay === "flex") {
         closeWelcome();
-        console.log("CLOSE welcome");
     } else if (instructionsDisplay === "flex") {
-        console.log("CLOSE instructions");
         instructionsModal.style.display = "none";
     } else if (correctDisplay === "flex") {
-        console.log("CLOSE correct");
         closeCorrect();
     } else if (selectDisplay === "flex") {
-        console.log("CLOSE select");
         closeSelect();
     } else if (incorrectDisplay === "flex") {
-        console.log("CLOSE incorrect");
         closeIncorrect();
     } else if (endDisplay === "flex") {
-        console.log("CLOSE end");
         closeEnd();
     } else {
         checkAnswer();
