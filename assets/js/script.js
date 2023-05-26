@@ -1,27 +1,99 @@
 // Questions and answers data
 const questions = [
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 255)", correctAnswer: "rgb(128, 0, 128)" },
-    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(173, 216, 230)" },
-    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(0, 128, 0)" },
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 192, 203)" },
-    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(128, 128, 0)" },
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(255, 255, 0)", correctAnswer: "rgb(255, 165, 0)" },
-    { firstColour: "rgb(255, 0, 0)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(139, 0, 0)" },
-    { firstColour: "rgb(0, 0, 255)", secondColour: "rgb(0, 0, 0)", correctAnswer: "rgb(0, 0, 139)" },
-    { firstColour: "rgb(255, 255, 0)", secondColour: "rgb(255, 255, 255)", correctAnswer: "rgb(255, 255, 166)" },
+    {
+        firstColour: "rgb(255, 0, 0)",
+        secondColour: "rgb(0, 0, 255)",
+        correctAnswer: "rgb(128, 0, 128)" 
+    },
+    {
+        firstColour: "rgb(0, 0, 255)",
+        secondColour: "rgb(255, 255, 255)",
+        correctAnswer: "rgb(173, 216, 230)"
+    },
+    {
+        firstColour: "rgb(0, 0, 255)",
+        secondColour: "rgb(255, 255, 0)",
+        correctAnswer: "rgb(0, 128, 0)"
+    },
+    {
+        firstColour: "rgb(255, 0, 0)",
+        secondColour: "rgb(255, 255, 255)",
+        correctAnswer: "rgb(255, 192, 203)"
+    },
+    {
+        firstColour: "rgb(255, 255, 0)",
+        secondColour: "rgb(0, 0, 0)",
+        correctAnswer: "rgb(128, 128, 0)"
+    },
+    {
+        firstColour: "rgb(255, 0, 0)",
+        secondColour: "rgb(255, 255, 0)",
+        correctAnswer: "rgb(255, 165, 0)"
+    },
+    {
+        firstColour: "rgb(255, 0, 0)",
+        secondColour: "rgb(0, 0, 0)",
+        correctAnswer: "rgb(139, 0, 0)"
+    },
+    {
+        firstColour: "rgb(0, 0, 255)",
+        secondColour: "rgb(0, 0, 0)",
+        correctAnswer: "rgb(0, 0, 139)"
+    },
+    {
+        firstColour: "rgb(255, 255, 0)",
+        secondColour: "rgb(255, 255, 255)",
+        correctAnswer: "rgb(255, 255, 166)"
+    },
 ]
 
 // innerHTML text data
 const hoverTexts = [
-    { firstText: "red", secondText: "blue", correctText: "purple" },
-    { firstText: "blue", secondText: "white", correctText: "light blue" },
-    { firstText: "blue", secondText: "yellow", correctText: "green" },
-    { firstText: "red", secondText: "white", correctText: "pink" },
-    { firstText: "yellow", secondText: "black", correctText: "dark yellow" },
-    { firstText: "red", secondText: "yellow", correctText: "orange" },
-    { firstText: "red", secondText: "black", correctText: "dark red" },
-    { firstText: "blue", secondText: "black", correctText: "dark blue" },
-    { firstText: "yellow", secondText: "white", correctText: "light yellow" },
+    {
+        firstText: "red",
+        secondText: "blue",
+        correctText: "purple"
+    },
+    {
+        firstText: "blue",
+        secondText: "white",
+        correctText: "light blue"
+    },
+    {
+        firstText: "blue",
+        secondText: "yellow",
+        correctText: "green"
+    },
+    {
+        firstText: "red",
+        secondText: "white",
+        correctText: "pink"
+    },
+    {
+        firstText: "yellow",
+        secondText: "black",
+        correctText: "dark yellow"
+    },
+    {
+        firstText: "red",
+        secondText: "yellow",
+        correctText: "orange"
+    },
+    {
+        firstText: "red",
+        secondText: "black",
+        correctText: "dark red"
+    },
+    {
+        firstText: "blue",
+        secondText: "black",
+        correctText: "dark blue"
+    },
+    {
+        firstText: "yellow",
+        secondText: "white",
+        correctText: "light yellow"
+    },
 ]
 
 // Question elements
