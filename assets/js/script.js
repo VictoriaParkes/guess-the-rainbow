@@ -143,7 +143,10 @@ let secondText;
 let correctAnswer;
 let correctText;
 
-// Wait for DOM to finish loading before adding event listeners and displaying the welcome modal
+/* 
+Wait for DOM to finish loading before adding event listeners 
+and displaying the welcome modal
+*/
 document.addEventListener("DOMContentLoaded", function () {
     eventListeners();
     welcome();
