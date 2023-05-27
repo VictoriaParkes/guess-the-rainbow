@@ -16,6 +16,10 @@ The primary audience of the site will be children and anyone else interested in 
 # Features
 ## Current Features
 The main content website is a displayed on a single page with the following features:
+- A favicon in the browser tab.
+
+![Favicon](docs/features/favicon.png)
+
 - A header with logo and title.
 - A "welcome" modal is displayed on loading the page to welcome the user and inform them of the structure of the game.
 - An interactive question section displaying the question to answer, with functionality to inform the user in text of the colours displayed when the cursor is hovered over the elements.
