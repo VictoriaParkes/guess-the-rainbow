@@ -114,3 +114,19 @@ Javasript - to functionality to the website.
 [PageSpeed Insights](https://pagespeed.web.dev/) - Used to generate lighthouse report for 404 error page as lighthouse was unable to load the page when used in Chrome Developer Tools.
 
 [Prettier.io](https://prettier.io/) - Used to format code.
+
+# Testing
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) was frequently utilised in the development of the website to manipulate and test features as they were added to the project, to test responsiveness and for debugging purposes.
+
+## Functionality Testing
+
+[See Functionality Testing Document](docs/testing/functionality-testing.md)
+
+## Browser Compatibility
+The website was tested for functionality on different browsers (Chrome, Firefox and Edge) and found to be fully functional on them all.
+
+## Bugs Encountered
+### Fixed
+1. Keydown event listener was not fuctioning. The problem was fixed by targeting the whole document instead of the answer box.
+2. When viewed on mobile devices the hover text was displayed before the span innerHTML was changed resulting in the previously displayed hover text being displayed. This problem was fixed by giving each span a unique id attribute and using these to set the innerHTML of each span in javascript.
+3. When the submit and instructions buttons were clicked, focus remained on the button. Hitting enter to close displayed modal called the button function again. This problem was fixed by adding ```.blur();``` to display modal functions to remove focus from the button.
