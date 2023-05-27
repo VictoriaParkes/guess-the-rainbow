@@ -115,6 +115,8 @@ Javasript - to functionality to the website.
 
 [Prettier.io](https://prettier.io/) - Used to format code.
 
+---
+
 # Testing
 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was frequently utilised in the development of the website to manipulate and test features as they were added to the project, to test responsiveness and for debugging purposes.
 
@@ -130,3 +132,48 @@ The website was tested for functionality on different browsers (Chrome, Firefox 
 1. Keydown event listener was not fuctioning. The problem was fixed by targeting the whole document instead of the answer box.
 2. When viewed on mobile devices the hover text was displayed before the span innerHTML was changed resulting in the previously displayed hover text being displayed. This problem was fixed by giving each span a unique id attribute and using these to set the innerHTML of each span in javascript.
 3. When the submit and instructions buttons were clicked, focus remained on the button. Hitting enter to close displayed modal called the button function again. This problem was fixed by adding ```.blur();``` to display modal functions to remove focus from the button.
+
+---
+
+# Deployment and Local Development
+## Deployment
+The site was deployed to GitHub pages. 
+
+The steps to deploy are as follows:
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project (https://github.com/VictoriaParkes/guess-the-rainbow).
+3. In the GitHub repository, navigate to the 'Settings' tab.
+4. From the 'Code and automation' section of the menu on the left, select 'Pages'.
+5. In the 'Build and deployment' section, under the heading 'Source' select 'Deploy from a branch' from the dropdown menu.
+6. Under the heading 'Branch', select 'main' from the branch selection dropdown menu and '/root' from the 'Select folder' dropdown menu.
+7. Click save, the page will be automatically refreshed and a message reading 'GitHub Pages source saved.' will be displayed to confirm successful deployment.
+8. The link to the live site will be displayed at the top of the 'GitHub Pages' page once deployment has completed and can be used to access the live website.
+
+The live link can be found here - [Guess The Rainbow](https://victoriaparkes.github.io/guess-the-rainbow/)
+
+## Local Development
+### Forking the Repository
+The steps to fork the repository are as follows:
+1. Log in to GitHub.
+2. Go to the repository for this project (https://github.com/VictoriaParkes/guess-the-rainbow).
+3. In the top-right corner of the page, click 'Fork'.
+4. Under 'Owner', select an owner for the repository from the dropdown menu.
+5. Optionally, in the "Description" field, type a description of your fork.
+6. To copy the main branch only, select the 'Copy the main branch only' check box. If you do not select this option, all branches will be copied into the new fork.
+7. Click 'Create fork'
+
+### Cloning Your Forked Repository
+1. Log-in to GitHub.com, navigate to your fork of the repository.
+2. Above the list of files, click Code.
+3. Copy the URL for the repository.
+    - To clone the repository using HTTPS, under "Clone with HTTPS", click the 'Copy' icon.
+    - To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the 'Copy' icon.
+    - To clone a repository using GitHub CLI, click Use GitHub CLI, then click the 'Copy' icon.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type git clone, and then paste the URL you copied earlier.
+7. Press Enter. Your local clone will be created.
+
+For more details about forking and cloning a repository, please refer to [GitHub documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+
+---
