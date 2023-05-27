@@ -99,12 +99,12 @@ const hoverTexts = [
 // Question elements
 const firstColourBox = document.getElementById("first-colour");
 const secondColourBox = document.getElementById("second-colour");
+const questionBoxes = document.querySelectorAll(".question-box");
 const answerBox = document.getElementById("answer");
 const questionMark = document.getElementById("question-mark");
 const firstTextSpan = document.getElementById("first-colour-text");
 const secondTextSpan = document.getElementById("second-colour-text");
 const answerTextSpan = document.getElementById("answer-colour-text");
-const questionBoxes = document.querySelectorAll(".box");
 
 // Score elements
 const scoreSpan = document.getElementById("score-span");
@@ -166,8 +166,10 @@ function eventListeners() {
     });
 
     questionBoxes.forEach((box) => {
-        box.addEventListener("mouseover", mouseOver);
+        box.addEventListener("mouseover", questionMouseOver);
     });
+
+    answerBox.addEventListener("mouseover", answerMouseOver);
 
     gridItems.forEach((gridItem) => {
         gridItem.addEventListener("click", () => {
@@ -399,44 +401,39 @@ function reset() {
 }
 
 // Display colour text when question spans hovered over
-function mouseOver() {
+function questionMouseOver() {
     let hoverText = hoverTexts[currentQuestion];
-    let answer = questions;
     firstTextSpan.innerHTML = hoverText.firstText;
     secondTextSpan.innerHTML = hoverText.secondText;
     firstTextSpan.style.visibility = "visible";
     secondTextSpan.style.visibility = "visible";
+}
+
+function answerMouseOver() {
+    let answer = questions;
+    answerTextSpan.style.visibility = "visible";
 
     let boxStyle = window.getComputedStyle(answerBox, null);
     let boxColour = boxStyle.getPropertyValue("background-color");
 
     if (boxColour === answer[0].correctAnswer) {
-        answerTextSpan.innerHTML = "purple";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[0].correctText;
     } else if (boxColour === answer[1].correctAnswer) {
-        answerTextSpan.innerHTML = "light Blue";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[1].correctText;
     } else if (boxColour === answer[2].correctAnswer) {
-        answerTextSpan.innerHTML = "green";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[2].correctText;
     } else if (boxColour === answer[3].correctAnswer) {
-        answerTextSpan.innerHTML = "pink";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[3].correctText;
     } else if (boxColour === answer[4].correctAnswer) {
-        answerTextSpan.innerHTML = "dark yellow";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[4].correctText;
     } else if (boxColour === answer[5].correctAnswer) {
-        answerTextSpan.innerHTML = "orange";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[5].correctText;
     } else if (boxColour === answer[6].correctAnswer) {
-        answerTextSpan.innerHTML = "dark red";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[6].correctText;
     } else if (boxColour === answer[7].correctAnswer) {
-        answerTextSpan.innerHTML = "dark blue";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[7].correctText;
     } else if (boxColour === answer[8].correctAnswer) {
-        answerTextSpan.innerHTML = "light yellow";
-        answerTextSpan.style.visibility = "visible";
+        answerTextSpan.innerHTML = hoverTexts[8].correctText;
     } else if (boxColour === "rgba(0, 0, 0, 0)") {
         answerTextSpan.style.visibility = "hidden";
     }

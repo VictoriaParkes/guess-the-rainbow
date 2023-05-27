@@ -1,4 +1,4 @@
-
+[Back to README.md](../../README.md#functionality-testing)
 
 # Functionality Testing
 
@@ -55,3 +55,5 @@ Details of manual testing of the functions of each feature of the website. Chrom
 | Enter key - check answer, incorrect answer | Press enter key with incorrect answer selected and no modal displayed | Incorrect answer modal is displayed informing the user they answered incorrectly. | PASS |
 |  |  |  |  |
 | Reset button | Click reset button | Game resets. | PASS |
+
+[Back to README.md](../../README.md#functionality-testing)

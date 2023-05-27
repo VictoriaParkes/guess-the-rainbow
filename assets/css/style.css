@@ -188,9 +188,9 @@ and set background colour and add border */
 }
 
 /* Style rule to display text when hovered over */
-.box:hover #first-colour-text,
-.box:hover #second-colour-text,
-.box:hover #answer-colour-text,
+.question-box:hover #first-colour-text,
+.question-box:hover #second-colour-text,
+#answer:hover #answer-colour-text,
 .grid-item:hover .colour-text {
     display: unset;
 }
