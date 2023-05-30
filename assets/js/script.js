@@ -125,7 +125,7 @@ const correctModal = document.getElementById("correct-modal");
 const selectModal = document.getElementById("select-modal");
 const incorrectModal = document.getElementById("incorrect-modal");
 const endModal = document.getElementById("end-modal");
-const close = document.getElementsByClassName("close");
+const closeX = document.getElementsByClassName("close-x");
 const correctAnswerColour = document.getElementById("correct-answer-colour");
 const correctAnswerText = document.getElementById("correct-answer-text");
 const endScoreSpan = document.getElementById("end-score-span");
@@ -264,7 +264,7 @@ function increaseQuestionsAnswered() {
 function welcome() {
     welcomeModal.style.display = "flex";
 
-    close[0].onclick = function () {
+    closeX[0].onclick = function () {
         closeWelcome();
     }
 
@@ -285,7 +285,7 @@ function instructions() {
     instructionsModal.style.display = "flex";
     instructionsButton.blur();
 
-    close[1].onclick = function () {
+    closeX[1].onclick = function () {
         closeInstructions();
     }
 
@@ -305,7 +305,7 @@ function correct() {
     correctModal.style.display = "flex";
     submitButton.blur();
 
-    close[2].onclick = function () {
+    closeX[2].onclick = function () {
         closeCorrect();
     }
     window.onclick = function (event) {
@@ -328,7 +328,7 @@ function select() {
     selectModal.style.display = "flex";
     submitButton.blur();
 
-    close[3].onclick = function () {
+    closeX[3].onclick = function () {
         closeSelect();
     }
     window.onclick = function (event) {
@@ -348,7 +348,7 @@ function incorrect() {
     incorrectModal.style.display = "flex";
     submitButton.blur();
 
-    close[4].onclick = function () {
+    closeX[4].onclick = function () {
         closeIncorrect();
     }
     window.onclick = function (event) {
@@ -377,7 +377,7 @@ function endGame() {
 
     endModal.style.display = "flex";
 
-    close[5].onclick = function () {
+    closeX[5].onclick = function () {
         closeEnd();
     }
     window.onclick = function (event) {

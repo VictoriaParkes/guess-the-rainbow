@@ -224,7 +224,7 @@ centre and size the modal, and set background colour and border */
 
 /* Style rule to position, size, set colour of close element, 
 and add border to prevent layout shift when hovered over */
-.close {
+.close-x {
     float: right;
     font-size: 1.5rem;
     padding: 0 6px;
@@ -234,8 +234,8 @@ and add border to prevent layout shift when hovered over */
 
 /* Style rule to set border to white, remove text decoration 
 and change cursor to a pointer when close element hovered over */
-.close:hover,
-.close:focus {
+.close-x:hover,
+.close-x:focus {
     border: 1px solid white;
     text-decoration: none;
     cursor: pointer;
