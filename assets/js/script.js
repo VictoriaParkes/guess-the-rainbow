@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function eventListeners() {
-    submit.addEventListener("click", checkAnswer);
+    submitButton.addEventListener("click", checkAnswer);
 
     instructionsButton.addEventListener("click", instructions);
 
