@@ -3,7 +3,7 @@ const questions = [
     {
         firstColour: "rgb(255, 0, 0)",
         secondColour: "rgb(0, 0, 255)",
-        correctAnswer: "rgb(128, 0, 128)" 
+        correctAnswer: "rgb(128, 0, 128)"
     },
     {
         firstColour: "rgb(0, 0, 255)",
@@ -226,6 +226,34 @@ function userAnswerHandler(gridItem) {
     let color = optionStyle.backgroundColor;
     answerBox.style.backgroundColor = color;
     questionMark.style.visibility = "hidden";
+    answerScreenReader();
+}
+
+function answerScreenReader() {
+    let answer = questions;
+
+    let boxStyle = window.getComputedStyle(answerBox, null);
+    let boxColour = boxStyle.getPropertyValue("background-color");
+
+    if (boxColour === answer[0].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[0].correctText;
+    } else if (boxColour === answer[1].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[1].correctText;
+    } else if (boxColour === answer[2].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[2].correctText;
+    } else if (boxColour === answer[3].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[3].correctText;
+    } else if (boxColour === answer[4].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[4].correctText;
+    } else if (boxColour === answer[5].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[5].correctText;
+    } else if (boxColour === answer[6].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[6].correctText;
+    } else if (boxColour === answer[7].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[7].correctText;
+    } else if (boxColour === answer[8].correctAnswer) {
+        srAnswerText.innerHTML = hoverTexts[8].correctText;
+    }
 }
 
 /**
