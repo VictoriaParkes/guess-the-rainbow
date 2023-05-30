@@ -45,7 +45,7 @@ const questions = [
         secondColour: "rgb(255, 255, 255)",
         correctAnswer: "rgb(255, 255, 166)"
     },
-]
+];
 
 // innerHTML text data
 const hoverTexts = [
@@ -94,7 +94,7 @@ const hoverTexts = [
         secondText: "white",
         correctText: "light yellow"
     },
-]
+];
 
 // Question elements
 const firstColourBox = document.getElementById("first-colour");
@@ -108,7 +108,7 @@ const answerTextSpan = document.getElementById("answer-colour-text");
 
 // Score elements
 const scoreSpan = document.getElementById("score-span");
-const questionsAnsweredSpan = document.getElementById("questions-answered-span")
+const questionsAnsweredSpan = document.getElementById("questions-answered-span");
 
 // Answer options grid elements
 const gridItems = document.querySelectorAll(".grid-item");
@@ -174,7 +174,7 @@ function eventListeners() {
     gridItems.forEach((gridItem) => {
         gridItem.addEventListener("click", () => {
             userAnswerHandler(gridItem);
-        })
+        });
     });
 }
 
@@ -266,13 +266,13 @@ function welcome() {
 
     closeX[0].onclick = function () {
         closeWelcome();
-    }
+    };
 
     window.onclick = function (event) {
         if (event.target === welcomeModal) {
             closeWelcome();
         }
-    }
+    };
 }
 
 function closeWelcome() {
@@ -287,13 +287,13 @@ function instructions() {
 
     closeX[1].onclick = function () {
         closeInstructions();
-    }
+    };
 
     window.onclick = function (event) {
         if (event.target === instructionsModal) {
             closeInstructions();
         }
-    }
+    };
 }
 
 function closeInstructions() {
@@ -307,12 +307,12 @@ function correct() {
 
     closeX[2].onclick = function () {
         closeCorrect();
-    }
+    };
     window.onclick = function (event) {
         if (event.target === correctModal) {
             closeCorrect();
         }
-    }
+    };
 }
 
 function closeCorrect() {
@@ -330,12 +330,12 @@ function select() {
 
     closeX[3].onclick = function () {
         closeSelect();
-    }
+    };
     window.onclick = function (event) {
         if (event.target === selectModal) {
             closeSelect();
         }
-    }
+    };
 }
 
 function closeSelect() {
@@ -350,12 +350,12 @@ function incorrect() {
 
     closeX[4].onclick = function () {
         closeIncorrect();
-    }
+    };
     window.onclick = function (event) {
         if (event.target === incorrectModal) {
             closeIncorrect();
         }
-    }
+    };
 }
 
 function closeIncorrect() {
@@ -379,12 +379,12 @@ function endGame() {
 
     closeX[5].onclick = function () {
         closeEnd();
-    }
+    };
     window.onclick = function (event) {
         if (event.target === endModal) {
             closeEnd();
         }
-    }
+    };
 }
 
 function closeEnd() {
