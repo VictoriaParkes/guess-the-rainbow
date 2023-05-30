@@ -188,3 +188,26 @@ The steps to fork the repository are as follows:
 For more details about forking and cloning a repository, please refer to [GitHub documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
 ---
+
+# 7. Credits
+## Code
+[W3 Schools](https://www.w3schools.com/) and lessons from [Code Institute's Full Stack Developer Course](https://codeinstitute.net/full-stack-software-development-diploma/) were frequently referred to in the development of this website.
+
+- The favicon was implemnted using code from Code Institute's "Love Maths" project.
+- The modals were created using W3school's [How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp).
+- The colour selection functionality was created using [Change Background Color onclick using JavaScript
+](https://www.howtocodeschool.com/2021/01/change-background-color-onclick-using-javascript.html#html-code) from How to Code School.
+- I learned to use the ```getcomputedstyle();``` method using W3school's page [Window getComputedStyle()](https://www.w3schools.com/JSREF/jsref_getcomputedstyle.asp).
+- The hover text was created using W3school's page [How TO - Display an Element on Hover](https://www.w3schools.com/css/css_tooltip.asp).
+- I learned to position elements centrally on the page using W3school's page [CSS Layout - Horizontal & Vertical Align](https://www.w3schools.com/css/css_align.asp).
+
+## Content
+The content of the website was written by Victoria Parkes.
+
+The local development section of this document was written using [GitHub documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+
+## Media
+The website logo image was sourced from [Rawpixel](https://www.rawpixel.com/image/6587780/png-sticker-icon)
+
+## Acknowledgements
+I would like to thank Brian Macharia, my Code Institute mentor, for his helpful feedback and advice.
