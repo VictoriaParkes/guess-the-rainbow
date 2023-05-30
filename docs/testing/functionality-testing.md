@@ -45,6 +45,7 @@ Details of manual testing of the functions of each feature of the website. Chrom
 | Mobile question colour hover text | Click question colour boxes for each question | Text displayed informing user of the colour displayed in box. | PASS |
 | Mobile answer box colour hover text - colour selected | For each colour, select colour and click answer box | Text displayed informing user of the colour displayed in answer box. | PASS |
 | Mobile answer box colour hover text - no colour selected | Click answer box with no answer selected | No text element is displayed. | PASS |
+| Answer options grid hover text | Hover mouse over each answer option | Text will inform user of the colour of the option hovered over | PASS |
 |  |  |  |  |
 | Submit button - no answer selected | Click submit button with no answer selected | Select answer modal is displayed asking user to select an answer. | PASS |
 | Submit button - correct answer | Click submit button with correct answer selected | Correct answer modal is displayed informing user they answered correctly. | PASS |
@@ -55,5 +56,11 @@ Details of manual testing of the functions of each feature of the website. Chrom
 | Enter key - check answer, incorrect answer | Press enter key with incorrect answer selected and no modal displayed | Incorrect answer modal is displayed informing the user they answered incorrectly. | PASS |
 |  |  |  |  |
 | Reset button | Click reset button | Game resets. | PASS |
+|  |  |  |  |
+| Screen reader - question colours | Use screen reader for each question | Screen reader will inform user of the colours displayed | PASS |
+| Screen reader - no answer selected | User screen reader with no answer selected | Screen reader will read "what colour?" when it reaches the answer box | PASS |
+| Screen reader - answer selected | Use screen reader for each possible selected answer | Screen reader will inform the user of the selected colour when it reaches the answer box | PASS |
+| Screen reader - answer options grid | Use screen reader for answer options grid | Screen reader will inform the user of the colour of each grid section | PASS |
+
 
 [Back to README.md](../../README.md#functionality-testing)
