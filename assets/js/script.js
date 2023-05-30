@@ -204,7 +204,7 @@ function displayQuestion() {
 
     answerBox.style.backgroundColor = "rgba(0, 0, 0, 0)";
     questionMark.style.visibility = "visible";
-    srAnswerText.innerHTML = "what colour?"
+    srAnswerText.innerHTML = "what colour?";
 }
 
 function runGame() {
