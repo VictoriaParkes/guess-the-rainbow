@@ -105,6 +105,9 @@ const questionMark = document.getElementById("question-mark");
 const firstTextSpan = document.getElementById("first-colour-text");
 const secondTextSpan = document.getElementById("second-colour-text");
 const answerTextSpan = document.getElementById("answer-colour-text");
+const srFirstText = document.getElementById("sr-first-text");
+const srSecondText = document.getElementById("sr-second-text");
+const srAnswerText = document.getElementById("sr-answer-text");
 
 // Score elements
 const scoreSpan = document.getElementById("score-span");
@@ -196,8 +199,12 @@ function displayQuestion() {
     correctAnswer = question.correctAnswer;
     correctText = hoverText.correctText;
 
+    srFirstText.innerHTML = hoverText.firstText;
+    srSecondText.innerHTML = hoverText.secondText;
+
     answerBox.style.backgroundColor = "rgba(0, 0, 0, 0)";
     questionMark.style.visibility = "visible";
+    srAnswerText.innerHTML = "what colour?"
 }
 
 function runGame() {
