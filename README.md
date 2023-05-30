@@ -13,6 +13,13 @@ The primary audience of the site will be children and anyone else interested in 
 
 ---
 
+# 1. User Experience (UX)
+## User Stories
+As a user I would like:
+- To improve my knowledge of colour mixing.
+- Easily determine the purpose of the website.
+- View the site on any device.
+
 # Features
 ## Current Features
 The main content website is a displayed on a single page with the following features:
