@@ -122,6 +122,8 @@ Javasript - to functionality to the website.
 
 [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate the CSS file.
 
+[JSHint](https://jshint.com/) - Used to validate the javascript file.
+
 [PageSpeed Insights](https://pagespeed.web.dev/) - Used to generate lighthouse report for 404 error page as lighthouse was unable to load the page when used in Chrome Developer Tools.
 
 [Prettier.io](https://prettier.io/) - Used to format code.
@@ -137,6 +139,22 @@ Javasript - to functionality to the website.
 
 ## Browser Compatibility
 The website was tested for functionality on different browsers (Chrome, Firefox and Edge) and found to be fully functional on them all.
+
+## W3C HTML Validator Testing
+The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML files.
+
+![index.html validation](docs/testing/validator-screenshots/index-html-validator.png)
+![404.html validation](docs/testing/validator-screenshots/404-html-validator.png)
+
+## W3C CSS Validator Testing
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the CSS in the stylesheet.
+
+![style.css validation](docs/testing/validator-screenshots/css-validator.png)
+
+## JSHint
+[JSHint](https://jshint.com/) was used to validate the javascript code in the script file.
+
+![script.js validation](docs/testing/validator-screenshots/js-validation.png)
 
 ## Bugs Encountered
 ### Fixed
