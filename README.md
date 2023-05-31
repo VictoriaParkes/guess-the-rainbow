@@ -118,6 +118,8 @@ Javasript - to functionality to the website.
 
 [Am I Responsive](https://ui.dev/amiresponsive) - To view the website on a range of devices and create the mock-up screenshot image.
 
+[Pericles](https://getpericles.com/) - Screen reader used to test accessiblity.
+
 [The W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML files.
 
 [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate the CSS file.
@@ -132,6 +134,8 @@ Javasript - to functionality to the website.
 
 # Testing
 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was frequently utilised in the development of the website to manipulate and test features as they were added to the project, to test responsiveness and for debugging purposes.
+
+[Pericles](https://getpericles.com/) screen reader was used to test the screen reader only elements intended to improve the accessiblity of the website.
 
 ## Functionality Testing
 
@@ -218,6 +222,7 @@ For more details about forking and cloning a repository, please refer to [GitHub
 - I learned to use the ```getcomputedstyle();``` method using W3school's page [Window getComputedStyle()](https://www.w3schools.com/JSREF/jsref_getcomputedstyle.asp).
 - The hover text was created using W3school's page [How TO - Display an Element on Hover](https://www.w3schools.com/css/css_tooltip.asp).
 - I learned to position elements centrally on the page using W3school's page [CSS Layout - Horizontal & Vertical Align](https://www.w3schools.com/css/css_align.asp).
+- [Font Awesome docs](https://fontawesome.com/v5/docs/web/other-topics/accessibility) were refered to in order to make the website more accessible to a wider audience.
 
 ## Content
 The content of the website was written by Victoria Parkes.
