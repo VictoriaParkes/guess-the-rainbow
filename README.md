@@ -9,9 +9,36 @@ The primary audience of the site will be children and anyone else interested in 
 [The deployed website can be found here](https://victoriaparkes.github.io/guess-the-rainbow/)
 
 # Contents
-/////////////////////////
-
----
+1. [User Experience (UX)](#1-user-experience-ux)
+    - [User Stories](#user-stories)
+2. [Features](#2-features)
+    - [Current Features](#current-features)
+    - [Future Features](#future-features)
+3. [Design](#3-design)
+    - [Structure](#structure)
+    - [Wireframes](#wireframes)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+    - [Icons](#icons)
+4. [Technologies Used](#4-technologies-used)
+5. [Testing](#5-testing)
+    - [Functionality Testing](#functionality-testing)
+    - [Browser Compatibility](#browser-compatibility)
+    - [W3C HTML Validator Testing](#w3c-html-validator-testing)
+    - [W3C CSS Validator Testing](#w3c-css-validator-testing)
+    - [Bugs Encountered](#bugs-encountered)
+        - [Fixed](#fixed)
+6. [Deployment and Local Development](#6-deployment-and-local-development)
+    - [Deployment](#deployment)
+    - [Local Development](#local-development)
+        - [Forking the Repository](#forking-the-repository)
+        - [Cloning Your Forked Repository](#cloning-your-forked-repository)
+7. [Credits](#7-credits)
+    - [Code](#code)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgements](#acknowledgements)
 
 # 1. User Experience (UX)
 ## User Stories
@@ -20,7 +47,7 @@ As a user I would like:
 - Easily determine the purpose of the website.
 - View the site on any device.
 
-# Features
+# 2. Features
 ## Current Features
 The main content website is a displayed on a single page with the following features:
 - A favicon in the browser tab.
@@ -51,9 +78,7 @@ The website also has a 404 error page informing the user that the page cannot be
 ## Future Features
 - More advanced game play levels testing the user on the mixing of secondary and tertiary colours.
 
----
-
-# Design
+# 3. Design
 
 ## Structure
 The website is designed with a simple structure with the content positioned centrally on the page displayed vertically in the following order:
@@ -87,7 +112,7 @@ All icons were sourced from [Font Awesome](https://fontawesome.com/).
 
 ---
 
-# Technologies Used
+# 4. Technologies Used
 HTML - to create the structure of the website.
 
 CSS - to add style to the website.
@@ -132,7 +157,7 @@ Javasript - to functionality to the website.
 
 ---
 
-# Testing
+# 5. Testing
 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was frequently utilised in the development of the website to manipulate and test features as they were added to the project, to test responsiveness and for debugging purposes.
 
 [Pericles](https://getpericles.com/) screen reader was used to test the screen reader only elements intended to improve the accessiblity of the website.
@@ -168,7 +193,7 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 
 ---
 
-# Deployment and Local Development
+# 6. Deployment and Local Development
 ## Deployment
 The site was deployed to GitHub pages. 
 
