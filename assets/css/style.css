@@ -48,11 +48,6 @@ h1 {
     margin: 20px;
 }
 
-/* Style rule to set font-size of plus symbol */
-.question.container {
-    font-size: 5rem;
-}
-
 /* Style rule to set position relative to it's default position, width 
 and height of question span elements and add border */
 #first-colour,
