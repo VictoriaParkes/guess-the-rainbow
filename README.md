@@ -147,13 +147,13 @@ The website was tested for functionality on different browsers (Chrome, Firefox 
 ## W3C HTML Validator Testing
 The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML files.
 
-![index.html validation](docs/testing/validator-screenshots/index-html-validator.png)
-![404.html validation](docs/testing/validator-screenshots/404-html-validator.png)
+![index.html validation](docs/testing/validator-screenshots/index-html-validation.png)
+![404.html validation](docs/testing/validator-screenshots/404-html-validation.png)
 
 ## W3C CSS Validator Testing
 The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the CSS in the stylesheet.
 
-![style.css validation](docs/testing/validator-screenshots/css-validator.png)
+![style.css validation](docs/testing/validator-screenshots/css-validation.png)
 
 ## JSHint
 [JSHint](https://jshint.com/) was used to validate the javascript code in the script file.
