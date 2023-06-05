@@ -1,4 +1,4 @@
-// Questions and answers data
+/* Questions and answers data */
 const questions = [
     {
         firstColour: "rgb(255, 0, 0)",
@@ -47,7 +47,7 @@ const questions = [
     },
 ];
 
-// innerHTML text data
+/* innerHTML text data */
 const hoverTexts = [
     {
         firstText: "red",
@@ -96,7 +96,7 @@ const hoverTexts = [
     },
 ];
 
-// Question elements
+/* Question elements */
 const firstColourBox = document.getElementById("first-colour");
 const secondColourBox = document.getElementById("second-colour");
 const questionBoxes = document.querySelectorAll(".question-box");
@@ -109,19 +109,19 @@ const srFirstText = document.getElementById("sr-first-text");
 const srSecondText = document.getElementById("sr-second-text");
 const srAnswerText = document.getElementById("sr-answer-text");
 
-// Score elements
+/* Score elements */
 const scoreSpan = document.getElementById("score-span");
 const questionsAnsweredSpan = document.getElementById("questions-answered-span");
 
-// Answer options grid elements
+/* Answer options grid elements */
 const gridItems = document.querySelectorAll(".grid-item");
 
-// Buttons
+/* Buttons */
 const submitButton = document.getElementById("submit");
 const instructionsButton = document.getElementById("instructions-btn");
 const resetButton = document.getElementById("reset-btn");
 
-// Modal elements
+/* Modal elements */
 const welcomeModal = document.getElementById("welcome-modal");
 const instructionsModal = document.getElementById("instructions-modal");
 const correctModal = document.getElementById("correct-modal");
@@ -133,14 +133,14 @@ const correctAnswerColour = document.getElementById("correct-answer-colour");
 const correctAnswerText = document.getElementById("correct-answer-text");
 const endScoreSpan = document.getElementById("end-score-span");
 
-// Add variable for question counter
+/* Add variable for question counter */
 let currentQuestion = 0;
-// Add variable for questions answered counter
+/* Add variable for questions answered counter */
 let questionsAnswered = 0;
-// Add variable for score counter
+/* Add variable for score counter */
 let score = 0;
 
-// Add variables with no defined value to set dynamically during the game
+/* Add variables with no defined value to set during the game */
 let firstText;
 let secondText;
 let correctAnswer;
@@ -207,20 +207,18 @@ function displayQuestion() {
     srAnswerText.innerHTML = "what colour?";
 }
 
+/* End or run the game based on number of questions answered  */
 function runGame() {
     if (questionsAnswered >= "9") {
-        // End game when 9 questions answered
         endGame();
     } else {
         displayQuestion(currentQuestion);
-        // Set score
         scoreSpan.innerHTML = score;
-        // Set questions answered
         questionsAnsweredSpan.innerHTML = questionsAnswered;
     }
 }
 
-// Set answer box span background colour
+/* Set answer box span background colour */
 function userAnswerHandler(gridItem) {
     let optionStyle = getComputedStyle(gridItem);
     let color = optionStyle.backgroundColor;
@@ -229,6 +227,7 @@ function userAnswerHandler(gridItem) {
     answerScreenReader();
 }
 
+/* Set the text of the answer box for screen readers */
 function answerScreenReader() {
     let answer = questions;
 
@@ -278,24 +277,24 @@ function checkAnswer() {
     }
 }
 
-// Increment the current question value by 1
+/* Increment the current question value by 1 */
 function incrementQuestion() {
     currentQuestion++;
 }
 
-// Increment the score value by 1
+/* Increment the score value by 1 */
 function increaseScore() {
     score++;
     scoreSpan.innerHTML = score;
 }
 
-// Increment the questions answered by 1
+/* Increment the questions answered by 1 */
 function increaseQuestionsAnswered() {
     questionsAnswered++;
     questionsAnsweredSpan.innerHTML = questionsAnswered;
 }
 
-// Display and close the welcome modal
+/* Display and close the welcome modal */
 function welcome() {
     welcomeModal.style.display = "flex";
 
@@ -310,12 +309,13 @@ function welcome() {
     };
 }
 
+/* Close welcome modal */
 function closeWelcome() {
     welcomeModal.style.display = "none";
     runGame(currentQuestion);
 }
 
-// Display and close the instructions modal
+/* Display and close the instructions modal */
 function instructions() {
     instructionsModal.style.display = "flex";
     instructionsButton.blur();
@@ -331,11 +331,12 @@ function instructions() {
     };
 }
 
+/* Close instructions modal */
 function closeInstructions() {
     instructionsModal.style.display = "none";
 }
 
-// Display and close the correct answer modal
+/* Display and close the correct answer modal */
 function correct() {
     correctModal.style.display = "flex";
     submitButton.blur();
@@ -350,6 +351,7 @@ function correct() {
     };
 }
 
+/* Close correct answer modal */
 function closeCorrect() {
     correctModal.style.display = "none";
     increaseScore();
@@ -358,7 +360,7 @@ function closeCorrect() {
     runGame(currentQuestion);
 }
 
-// Display and close the select answer modal
+/* Display and close the select answer modal */
 function select() {
     selectModal.style.display = "flex";
     submitButton.blur();
@@ -373,11 +375,12 @@ function select() {
     };
 }
 
+/* Close selct answer modal */
 function closeSelect() {
     selectModal.style.display = "none";
 }
 
-// Display and close the incorrect answer modal
+/* Display and close the incorrect answer modal */
 function incorrect() {
     displayCorrectAnswer();
     incorrectModal.style.display = "flex";
@@ -393,6 +396,7 @@ function incorrect() {
     };
 }
 
+/* Close incorrect answer modal */
 function closeIncorrect() {
     incorrectModal.style.display = "none";
     incrementQuestion();
@@ -400,13 +404,13 @@ function closeIncorrect() {
     runGame(currentQuestion);
 }
 
-// Inform the user of the correct answer in the incorrect answer modal
+/* Inform the user of the correct answer in the incorrect answer modal */
 function displayCorrectAnswer() {
     correctAnswerColour.style.backgroundColor = correctAnswer;
     correctAnswerText.innerHTML = correctText;
 }
 
-// Display and close the end game modal
+/* Display and close the end game modal */
 function endGame() {
     endScoreSpan.innerHTML = score;
 
@@ -422,12 +426,13 @@ function endGame() {
     };
 }
 
+/* Close end game modal */
 function closeEnd() {
     endModal.style.display = "none";
     reset();
 }
 
-// Reset the game
+/* Reset the game */
 function reset() {
     currentQuestion = 0;
     score = 0;
@@ -435,7 +440,7 @@ function reset() {
     runGame();
 }
 
-// Display colour text when question spans hovered over
+/* Display colour text when question spans hovered over */
 function questionMouseOver() {
     let hoverText = hoverTexts[currentQuestion];
     firstTextSpan.innerHTML = hoverText.firstText;
@@ -444,6 +449,7 @@ function questionMouseOver() {
     secondTextSpan.style.visibility = "visible";
 }
 
+/* Set hover text of answer box */
 function answerMouseOver() {
     let answer = questions;
     answerTextSpan.style.visibility = "visible";
@@ -474,7 +480,7 @@ function answerMouseOver() {
     }
 }
 
-// Close modal or check answer when enter key pressed
+/* Close modal or check answer when enter key pressed */
 function enterKey() {
 
     let welcomeStyle = window.getComputedStyle(welcomeModal);
