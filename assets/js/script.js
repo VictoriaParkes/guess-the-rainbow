@@ -146,7 +146,7 @@ let secondText;
 let correctAnswer;
 let correctText;
 
-/* 
+/*
 Wait for DOM to finish loading before adding event listeners 
 and displaying the welcome modal
 */
@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     welcome();
 });
 
+/* Add event listeners */
 function eventListeners() {
     submitButton.addEventListener("click", checkAnswer);
 
@@ -218,7 +219,11 @@ function runGame() {
     }
 }
 
-/* Set answer box span background colour */
+/**
+ * Get background colour of gridItem clicked
+ * and set answer box span background colour
+ * to the returned colour.
+*/
 function userAnswerHandler(gridItem) {
     let optionStyle = getComputedStyle(gridItem);
     let color = optionStyle.backgroundColor;
@@ -227,7 +232,12 @@ function userAnswerHandler(gridItem) {
     answerScreenReader();
 }
 
-/* Set the text of the answer box for screen readers */
+/**
+ * Get current background colour of answer box,
+ * compare the returned colour to the correct answers of the questions
+ * and set the text of the answer box for screen readers to the
+ * corresponding correct text value.
+*/
 function answerScreenReader() {
     let answer = questions;
 
@@ -256,11 +266,12 @@ function answerScreenReader() {
 }
 
 /**
- * Checks if the user answer matches the correct answer and
- * displays the appropriate message modal to inform the user.
- * Increments the score, questions answered and current question
+ * Get the background colour of the answer box.
+ * Check if the user answer matches the correct answer and
+ * display the appropriate message modal to inform the user.
+ * Increment the score, questions answered and current question
  * if user answer is correct.
- * Increments the questions answered and current question
+ * Increment the questions answered and current question
  * if user answer is incorrect.
 */
 function checkAnswer() {
@@ -288,7 +299,10 @@ function increaseScore() {
     scoreSpan.innerHTML = score;
 }
 
-/* Increment the questions answered by 1 */
+/**
+ * Increment the questions answered by 1
+ * and display the updated value
+*/
 function increaseQuestionsAnswered() {
     questionsAnswered++;
     questionsAnsweredSpan.innerHTML = questionsAnswered;
@@ -309,13 +323,17 @@ function welcome() {
     };
 }
 
-/* Close welcome modal */
+/* Close welcome modal and run game */
 function closeWelcome() {
     welcomeModal.style.display = "none";
     runGame(currentQuestion);
 }
 
-/* Display and close the instructions modal */
+/**
+ * Display instructions modal,
+ * remove focus from instructions button
+ * and close the instructions modal
+*/
 function instructions() {
     instructionsModal.style.display = "flex";
     instructionsButton.blur();
@@ -351,7 +369,13 @@ function correct() {
     };
 }
 
-/* Close correct answer modal */
+/**
+ * Close correct answer modal,
+ * increase score,
+ * increase questions answered,
+ * increment the current question
+ * and run game for next question.
+*/
 function closeCorrect() {
     correctModal.style.display = "none";
     increaseScore();
@@ -360,7 +384,11 @@ function closeCorrect() {
     runGame(currentQuestion);
 }
 
-/* Display and close the select answer modal */
+/**
+ * Display select answer modal,
+ * remove focus from submit answer button
+ * and close the select answer modal.
+*/
 function select() {
     selectModal.style.display = "flex";
     submitButton.blur();
@@ -375,12 +403,16 @@ function select() {
     };
 }
 
-/* Close selct answer modal */
+/* Close select answer modal */
 function closeSelect() {
     selectModal.style.display = "none";
 }
 
-/* Display and close the incorrect answer modal */
+/**
+ * Display incorrect answer modal,
+ * remove focus from submit button
+ * and close the incorrect answer modal.
+*/
 function incorrect() {
     displayCorrectAnswer();
     incorrectModal.style.display = "flex";
@@ -396,7 +428,12 @@ function incorrect() {
     };
 }
 
-/* Close incorrect answer modal */
+/**
+ * Close incorrect answer modal,
+ * increment current question,
+ * increase number of questions answered
+ * and run game for next question.
+*/
 function closeIncorrect() {
     incorrectModal.style.display = "none";
     incrementQuestion();
@@ -404,13 +441,21 @@ function closeIncorrect() {
     runGame(currentQuestion);
 }
 
-/* Inform the user of the correct answer in the incorrect answer modal */
+/**
+ * Inform the user of the correct answer in the incorrect answer modal.
+ * Set correct answer box background colour to match current question
+ * correct answer and correct answer text to match current question
+ * correct text value.
+*/
 function displayCorrectAnswer() {
     correctAnswerColour.style.backgroundColor = correctAnswer;
     correctAnswerText.innerHTML = correctText;
 }
 
-/* Display and close the end game modal */
+/**
+ * Display and close the end game modal
+ * and set end score text to score value.
+*/
 function endGame() {
     endScoreSpan.innerHTML = score;
 
@@ -426,13 +471,19 @@ function endGame() {
     };
 }
 
-/* Close end game modal */
+/* Close end game modal and reset the game */
 function closeEnd() {
     endModal.style.display = "none";
     reset();
 }
 
-/* Reset the game */
+/**
+ * Reset the game.
+ * Set current question to 0,
+ * set score to 0,
+ * set questions answered to 0
+ * and run the game.
+*/
 function reset() {
     currentQuestion = 0;
     score = 0;
@@ -440,7 +491,11 @@ function reset() {
     runGame();
 }
 
-/* Display colour text when question spans hovered over */
+/**
+ * Display colour text when question spans hovered over.
+ * Set span text to match corresponding current question
+ * text and make span visible.
+*/
 function questionMouseOver() {
     let hoverText = hoverTexts[currentQuestion];
     firstTextSpan.innerHTML = hoverText.firstText;
@@ -449,7 +504,13 @@ function questionMouseOver() {
     secondTextSpan.style.visibility = "visible";
 }
 
-/* Set hover text of answer box */
+/**
+ * Set hover text of answer box.
+ * Make answer text span visible,
+ * get background colour of answer box,
+ * compare background colour to questions correct answers,
+ * set span text to corresponding correct text value.
+*/
 function answerMouseOver() {
     let answer = questions;
     answerTextSpan.style.visibility = "visible";
@@ -480,7 +541,13 @@ function answerMouseOver() {
     }
 }
 
-/* Close modal or check answer when enter key pressed */
+/**
+ * Close modal or check answer when enter key pressed.
+ * Get the property value "display" for each modal,
+ * close modal if any modal display value is equal to "flex"
+ * or check answer if none of the modals display values are
+ * equal to "flex".
+*/
 function enterKey() {
 
     let welcomeStyle = window.getComputedStyle(welcomeModal);
