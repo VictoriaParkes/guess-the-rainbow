@@ -27,88 +27,90 @@
         </div>
     </header>
 
-    <!-- Question -->
-    <div id="question">
-        <div class="question-container">
-            <div id="first-colour" class="question-box">
-                <span id="first-colour-text"></span>
-                <span class="sr-only" id="sr-first-text"></span>
+    <main id="game-area">
+        <!-- Question -->
+        <div id="question">
+            <div class="question-container">
+                <div id="first-colour" class="question-box">
+                    <span id="first-colour-text"></span>
+                    <span class="sr-only" id="sr-first-text"></span>
+                </div>
+                <i class="fas fa-plus" aria-hidden="true"></i>
+                <span class="sr-only">plus</span>
+                <div id="second-colour" class="question-box">
+                    <span id="second-colour-text"></span>
+                    <span class="sr-only" id="sr-second-text"></span>
+                </div>
+                <i class="fas fa-equals" aria-hidden="true"></i>
+                <span class="sr-only">equals</span>
+                <div id="answer">
+                    <i id="question-mark" class="fas fa-question" aria-hidden="true"></i>
+                    <span class="sr-only" id="sr-answer-text"></span>
+                    <span id="answer-colour-text"></span>
+                </div>
             </div>
-            <i class="fas fa-plus" aria-hidden="true"></i>
-            <span class="sr-only">plus</span>
-            <div id="second-colour" class="question-box">
-                <span id="second-colour-text"></span>
-                <span class="sr-only" id="sr-second-text"></span>
-            </div>
-            <i class="fas fa-equals" aria-hidden="true"></i>
-            <span class="sr-only">equals</span>
-            <div id="answer">
-                <i id="question-mark" class="fas fa-question" aria-hidden="true"></i>
-                <span class="sr-only" id="sr-answer-text"></span>
-                <span id="answer-colour-text"></span>
+            <button id="submit" class="btn">Submit Answer</button>
+        </div>
+
+        <!-- Answer selection grid -->
+        <div id="options">
+            <div class="grid-container">
+                <div class="grid-item orange">
+                    <span class="colour-text">orange</span>
+                    <span class="sr-only">orange</span>
+                </div>
+                <div class="grid-item green">
+                    <span class="colour-text">green</span>
+                    <span class="sr-only">green</span>
+                </div>
+                <div class="grid-item purple">
+                    <span class="colour-text">purple</span>
+                    <span class="sr-only">purple</span>
+                </div>
+                <div class="grid-item pink">
+                    <span class="colour-text">pink</span>
+                    <span class="sr-only">pink</span>
+                </div>
+                <div class="grid-item l-blue">
+                    <span class="colour-text">light blue</span>
+                    <span class="sr-only">light blue</span>
+                </div>
+                <div class="grid-item l-yellow">
+                    <span class="colour-text">light yellow</span>
+                    <span class="sr-only">light yellow</span>
+                </div>
+                <div class="grid-item d-red">
+                    <span class="colour-text">dark red</span>
+                    <span class="sr-only">dark red</span>
+                </div>
+                <div class="grid-item d-blue">
+                    <span class="colour-text">dark blue</span>
+                    <span class="sr-only">dark blue</span>
+                </div>
+                <div class="grid-item d-yellow">
+                    <span class="colour-text">dark yellow</span>
+                    <span class="sr-only">dark yellow</span>
+                </div>
             </div>
         </div>
-        <button id="submit" class="btn">Submit Answer</button>
-    </div>
 
-    <!-- Answer selection grid -->
-    <div id="options">
-        <div class="grid-container">
-            <div class="grid-item orange">
-                <span class="colour-text">orange</span>
-                <span class="sr-only">orange</span>
-            </div>
-            <div class="grid-item green">
-                <span class="colour-text">green</span>
-                <span class="sr-only">green</span>
-            </div>
-            <div class="grid-item purple">
-                <span class="colour-text">purple</span>
-                <span class="sr-only">purple</span>
-            </div>
-            <div class="grid-item pink">
-                <span class="colour-text">pink</span>
-                <span class="sr-only">pink</span>
-            </div>
-            <div class="grid-item l-blue">
-                <span class="colour-text">light blue</span>
-                <span class="sr-only">light blue</span>
-            </div>
-            <div class="grid-item l-yellow">
-                <span class="colour-text">light yellow</span>
-                <span class="sr-only">light yellow</span>
-            </div>
-            <div class="grid-item d-red">
-                <span class="colour-text">dark red</span>
-                <span class="sr-only">dark red</span>
-            </div>
-            <div class="grid-item d-blue">
-                <span class="colour-text">dark blue</span>
-                <span class="sr-only">dark blue</span>
-            </div>
-            <div class="grid-item d-yellow">
-                <span class="colour-text">dark yellow</span>
-                <span class="sr-only">dark yellow</span>
+        <!-- Current score -->
+        <div id="score">
+            <p>Score: <span id="score-span"></span> / <span id="questions-answered-span"></span></p>
+        </div>
+
+        <!-- Instructions and reset buttons -->
+        <div id="buttons">
+            <div>
+                <span>
+                    <button id="instructions-btn" class="btn">Instructions</button>
+                </span>
+                <span>
+                    <button id="reset-btn" class="btn">Reset</button>
+                </span>
             </div>
         </div>
-    </div>
-
-    <!-- Current score -->
-    <div id="score">
-        <p>Score: <span id="score-span"></span> / <span id="questions-answered-span"></span></p>
-    </div>
-
-    <!-- Instructions and reset buttons -->
-    <div id="buttons">
-        <div>
-            <span>
-                <button id="instructions-btn" class="btn">Instructions</button>
-            </span>
-            <span>
-                <button id="reset-btn" class="btn">Reset</button>
-            </span>
-        </div>
-    </div>
+    </main>
 
     <!-- Welcome modal -->
     <div id="welcome">
@@ -139,7 +141,8 @@
                     <h2>Instructions</h2>
                 </div>
                 <div class="modal-body">
-                    <p>Determine what the resulting colour would be after mixing the two colours given in the question</p>
+                    <p>Determine what the resulting colour would be after mixing the two colours given in the question
+                    </p>
                     <p>Select your answer from the colour grid and hit the submit button below the question</p>
                     <p>Click the reset button to start the game again</p>
                 </div>
