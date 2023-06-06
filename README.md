@@ -27,6 +27,7 @@ The primary audience of the site will be children and anyone else interested in 
     - [Browser Compatibility](#browser-compatibility)
     - [W3C HTML Validator Testing](#w3c-html-validator-testing)
     - [W3C CSS Validator Testing](#w3c-css-validator-testing)
+    - [JSHint Javascript Validator Testing](#jshint-javascript-validator-testing)
     - [Bugs Encountered](#bugs-encountered)
         - [Fixed](#fixed)
 6. [Deployment and Local Development](#6-deployment-and-local-development)
@@ -180,7 +181,7 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 
 ![style.css validation](docs/testing/validator-screenshots/css-validation.png)
 
-## JSHint
+## JSHint Javascript Validator Testing
 [JSHint](https://jshint.com/) was used to validate the javascript code in the script file.
 
 ![script.js validation](docs/testing/validator-screenshots/js-validation.png)
