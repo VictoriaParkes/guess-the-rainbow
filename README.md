@@ -28,6 +28,7 @@ The primary audience of the site will be children and anyone else interested in 
     - [W3C HTML Validator Testing](#w3c-html-validator-testing)
     - [W3C CSS Validator Testing](#w3c-css-validator-testing)
     - [JSHint Javascript Validator Testing](#jshint-javascript-validator-testing)
+    - [Lighthouse Auditing](#lighthouse-auditing)
     - [Bugs Encountered](#bugs-encountered)
         - [Fixed](#fixed)
 6. [Deployment and Local Development](#6-deployment-and-local-development)
@@ -111,8 +112,6 @@ Icons were used for the arithmetic symbols and the question mark displayed in th
 
 All icons were sourced from [Font Awesome](https://fontawesome.com/).
 
----
-
 # 4. Technologies Used
 HTML - to create the structure of the website.
 
@@ -156,8 +155,6 @@ Javasript - to functionality to the website.
 
 [Prettier.io](https://prettier.io/) - Used to format code.
 
----
-
 # 5. Testing
 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was frequently utilised in the development of the website to manipulate and test features as they were added to the project, to test responsiveness and for debugging purposes.
 
@@ -186,13 +183,28 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 
 ![script.js validation](docs/testing/validator-screenshots/js-validation.png)
 
+## Lighthouse Auditing
+I frequently used Lighthouse in the Chrome Developer Tools to allow me to test the performance, accessibility, best practices and SEO of the website during the development of the website.
+
+Lighthouse audit reports are as follows:
+### Index - Mobile
+![index.html lighthouse audit report mobile](docs/testing/lighthouse-audits/lighthouse-report-index-mobile.png)
+### Index - Desktop
+![index.html lighthouse audit report desktop](docs/testing/lighthouse-audits/lighthouse-report-index-desktop.png)
+### 404 - Mobile
+![404.html lighthouse audit report mobile](docs/testing/lighthouse-audits/lighthouse-report-404-mobile.png)
+### 404 - Desktop
+![404.html lighthouse audit report desktop](docs/testing/lighthouse-audits/lighthouse-report-404-desktop.png)
+
+Diagnostics for all pages tested suggested to 'serve static assets with an efficient cache policy'. HTTP caching can be used to speed up the page load time on repeat visits by storing such as images, css files and javascript files. Web caches are used to reduce latency because the resources are stored closer to the client instead of the origin server speeding up the time it takes to satisfy requests for the resources and display the information on the website. Caching resources also reduces network traffic as the cached files are available locally to the client so they do not need to be downloaded again. The resources cached for this website are stored for 10 minutes before the cache expires and the files must be requested from the origin server again. Increasing the cache duration could speed up repeat visits to the website.
+
+![Lighthouse diagnostics](docs/testing/lighthouse-audits/lighthouse-diagnostics.png)
+
 ## Bugs Encountered
 ### Fixed
 1. Keydown event listener was not fuctioning. The problem was fixed by targeting the whole document instead of the answer box.
 2. When viewed on mobile devices the hover text was displayed before the span innerHTML was changed resulting in the previously displayed hover text being displayed. This problem was fixed by giving each span a unique id attribute and using these to set the innerHTML of each span in javascript.
 3. When the submit and instructions buttons were clicked, focus remained on the button. Hitting enter to close displayed modal called the button function again. This problem was fixed by adding ```.blur();``` to display modal functions to remove focus from the button.
-
----
 
 # 6. Deployment and Local Development
 ## Deployment
@@ -234,8 +246,6 @@ The steps to fork the repository are as follows:
 7. Press Enter. Your local clone will be created.
 
 For more details about forking and cloning a repository, please refer to [GitHub documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
-
----
 
 # 7. Credits
 ## Code
