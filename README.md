@@ -30,7 +30,6 @@ The primary audience of the site will be children and anyone else interested in 
     - [JSHint Javascript Validator Testing](#jshint-javascript-validator-testing)
     - [Lighthouse Auditing](#lighthouse-auditing)
     - [Bugs Encountered](#bugs-encountered)
-        - [Fixed](#fixed)
 6. [Deployment and Local Development](#6-deployment-and-local-development)
     - [Deployment](#deployment)
     - [Local Development](#local-development)
@@ -151,7 +150,7 @@ Javasript - to functionality to the website.
 
 [JSHint](https://jshint.com/) - Used to validate the javascript file.
 
-[PageSpeed Insights](https://pagespeed.web.dev/) - Used to generate lighthouse report for 404 error page as lighthouse was unable to load the page when used in Chrome Developer Tools.
+[PageSpeed Insights](https://pagespeed.web.dev/) - Used to generate lighthouse reports.
 
 [Prettier.io](https://prettier.io/) - Used to format code.
 
@@ -206,6 +205,9 @@ Diagnostics for all pages tested suggested to 'serve static assets with an effic
 2. When viewed on mobile devices the hover text was displayed before the span innerHTML was changed resulting in the previously displayed hover text being displayed. This problem was fixed by giving each span a unique id attribute and using these to set the innerHTML of each span in javascript.
 3. When the submit and instructions buttons were clicked, focus remained on the button. Hitting enter to close displayed modal called the button function again. This problem was fixed by adding ```.blur();``` to display modal functions to remove focus from the button.
 
+### Unfixed Bugs
+1. Improve performance by serving static assets with an efficient cache policy, as suggested in the Lighthouse report.
+
 # 6. Deployment and Local Development
 ## Deployment
 The site was deployed to GitHub pages. 
@@ -255,9 +257,9 @@ For more details about forking and cloning a repository, please refer to [GitHub
 - The modals were created using W3school's [How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp).
 - The colour selection functionality was created using [Change Background Color onclick using JavaScript
 ](https://www.howtocodeschool.com/2021/01/change-background-color-onclick-using-javascript.html#html-code) from How to Code School.
-- I learned to use the ```getcomputedstyle();``` method using W3school's page [Window getComputedStyle()](https://www.w3schools.com/JSREF/jsref_getcomputedstyle.asp).
+- The ```getcomputedstyle();``` method was utilised using W3school's page [Window getComputedStyle()](https://www.w3schools.com/JSREF/jsref_getcomputedstyle.asp).
 - The hover text was created using W3school's page [How TO - Display an Element on Hover](https://www.w3schools.com/css/css_tooltip.asp).
-- I learned to position elements centrally on the page using W3school's page [CSS Layout - Horizontal & Vertical Align](https://www.w3schools.com/css/css_align.asp).
+- Elements were positioned centrally on the page using W3school's page [CSS Layout - Horizontal & Vertical Align](https://www.w3schools.com/css/css_align.asp).
 - [Font Awesome docs](https://fontawesome.com/v5/docs/web/other-topics/accessibility) were refered to in order to make the website more accessible to a wider audience.
 
 ## Content
