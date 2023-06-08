@@ -258,7 +258,7 @@ For more details about forking and cloning a repository, please refer to [GitHub
 - The colour selection functionality was created using [Change Background Color onclick using JavaScript
 ](https://www.howtocodeschool.com/2021/01/change-background-color-onclick-using-javascript.html#html-code) from How to Code School.
 - The ```getcomputedstyle();``` method was utilised using W3school's page [Window getComputedStyle()](https://www.w3schools.com/JSREF/jsref_getcomputedstyle.asp).
-- The hover text was created using W3school's page [How TO - Display an Element on Hover](https://www.w3schools.com/css/css_tooltip.asp).
+- The hover text was created using W3school's pages [How TO - Display an Element on Hover](https://www.w3schools.com/howto/howto_css_display_element_hover.asp) and [CSS Tooltip](https://www.w3schools.com/css/css_tooltip.asp).
 - Elements were positioned centrally on the page using W3school's page [CSS Layout - Horizontal & Vertical Align](https://www.w3schools.com/css/css_align.asp).
 - [Font Awesome docs](https://fontawesome.com/v5/docs/web/other-topics/accessibility) were referred to in order to make the website more accessible to a wider audience.
 
