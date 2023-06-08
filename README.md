@@ -27,7 +27,7 @@ The primary audience of the site will be children and anyone else interested in 
     - [Browser Compatibility](#browser-compatibility)
     - [W3C HTML Validator Testing](#w3c-html-validator-testing)
     - [W3C CSS Validator Testing](#w3c-css-validator-testing)
-    - [JSHint Javascript Validator Testing](#jshint-javascript-validator-testing)
+    - [JSHint JavaScript Validator Testing](#jshint-javascript-validator-testing)
     - [Lighthouse Auditing](#lighthouse-auditing)
     - [Bugs Encountered](#bugs-encountered)
 6. [Deployment and Local Development](#6-deployment-and-local-development)
@@ -58,17 +58,17 @@ The main content website is a displayed on a single page with the following feat
 - A header with logo and title.
 - A "welcome" modal is displayed on loading the page to welcome the user and inform them of the structure of the game.
 - An interactive question section displaying the question to answer, with functionality to inform the user in text of the colours displayed when the cursor is hovered over the elements.
-- A "Submit Answer" button used to submit the choosen answer to the question for feedback.
-- A grid of colours to choose the answer from which will change the background colour of the question answer box to reflect the choosen answer. Each section of the colour grid also has the functionality to display the section colour in text when the cursor is hovered over.
+- A "Submit Answer" button used to submit the chosen answer to the question for feedback.
+- A grid of colours to choose the answer from which will change the background colour of the question answer box to reflect the chosen answer. Each section of the colour grid also has the functionality to display the section colour in text when the cursor is hovered over.
 - The user score is displayed below the colour grid displaying the number of correct answers out of the number of questions answered.
 
 ![Hover feature](docs/features/colour-hover.png)
 
-- Feedback is recieved via the display of a modal:
+- Feedback is received via the display of a modal:
  - "Select an Answer" modal to inform the user they have not submitted an answer.
  - "Correct" modal to inform the user they have submitted the correct answer.
  - "Incorrect" modal to inform the user they have submitted an incorrect answer and inform them of the correct answer.
-- An instrutions button which displays a modal containing instructions informing the user how to use the website.
+- An instructions button which displays a modal containing instructions informing the user how to use the website.
 
 ![Modals](docs/features/modals.png)
 
@@ -116,7 +116,7 @@ HTML - to create the structure of the website.
 
 CSS - to add style to the website.
 
-Javasript - to functionality to the website.
+JavaScript - to functionality to the website.
 
 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - used to help test features and for debugging.
 
@@ -138,17 +138,17 @@ Javasript - to functionality to the website.
 
 [CloudConvert](https://cloudconvert.com/) - used to convert images to webp format.
 
-[favicon.cc](https://www.favicon.cc/) - to to create the favicon.
+[favicon.cc](https://www.favicon.cc/) - used to create the favicon.
 
 [Am I Responsive](https://ui.dev/amiresponsive) - To view the website on a range of devices and create the mock-up screenshot image.
 
-[Pericles](https://getpericles.com/) - Screen reader used to test accessiblity.
+[Pericles](https://getpericles.com/) - Screen reader used to test accessibility.
 
 [The W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML files.
 
 [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate the CSS file.
 
-[JSHint](https://jshint.com/) - Used to validate the javascript file.
+[JSHint](https://jshint.com/) - Used to validate the JavaScript file.
 
 [PageSpeed Insights](https://pagespeed.web.dev/) - Used to generate lighthouse reports.
 
@@ -157,7 +157,7 @@ Javasript - to functionality to the website.
 # 5. Testing
 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was frequently utilised in the development of the website to manipulate and test features as they were added to the project, to test responsiveness and for debugging purposes.
 
-[Pericles](https://getpericles.com/) screen reader was used to test the screen reader only elements intended to improve the accessiblity of the website.
+[Pericles](https://getpericles.com/) screen reader was used to test the screen reader only elements intended to improve the accessibility of the website.
 
 ## Functionality Testing
 
@@ -177,8 +177,8 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 
 ![style.css validation](docs/testing/validator-screenshots/css-validation.png)
 
-## JSHint Javascript Validator Testing
-[JSHint](https://jshint.com/) was used to validate the javascript code in the script file.
+## JSHint JavaScript Validator Testing
+[JSHint](https://jshint.com/) was used to validate the JavaScript code in the script file.
 
 ![script.js validation](docs/testing/validator-screenshots/js-validation.png)
 
@@ -195,14 +195,14 @@ Lighthouse audit reports are as follows:
 ### 404 - Desktop
 ![404.html lighthouse audit report desktop](docs/testing/lighthouse-audits/lighthouse-report-404-desktop.png)
 
-Diagnostics for all pages tested suggested to 'serve static assets with an efficient cache policy'. HTTP caching can be used to speed up the page load time on repeat visits by storing such as images, css files and javascript files. Web caches are used to reduce latency because the resources are stored closer to the client instead of the origin server speeding up the time it takes to satisfy requests for the resources and display the information on the website. Caching resources also reduces network traffic as the cached files are available locally to the client so they do not need to be downloaded again. The resources cached for this website are stored for 10 minutes before the cache expires and the files must be requested from the origin server again. Increasing the cache duration could speed up repeat visits to the website.
+Diagnostics for all pages tested suggested to 'serve static assets with an efficient cache policy'. HTTP caching can be used to speed up the page load time on repeat visits by storing such as images, CSS files and JavaScript files. Web caches are used to reduce latency because the resources are stored closer to the client instead of the origin server speeding up the time it takes to satisfy requests for the resources and display the information on the website. Caching resources also reduces network traffic as the cached files are available locally to the client so they do not need to be downloaded again. The resources cached for this website are stored for 10 minutes before the cache expires and the files must be requested from the origin server again. Increasing the cache duration could speed up repeat visits to the website.
 
 ![Lighthouse diagnostics](docs/testing/lighthouse-audits/lighthouse-diagnostics.png)
 
 ## Bugs Encountered
 ### Fixed
-1. Keydown event listener was not fuctioning. The problem was fixed by targeting the whole document instead of the answer box.
-2. When viewed on mobile devices the hover text was displayed before the span innerHTML was changed resulting in the previously displayed hover text being displayed. This problem was fixed by giving each span a unique id attribute and using these to set the innerHTML of each span in javascript.
+1. Keydown event listener was not functioning. The problem was fixed by targeting the whole document instead of the answer box.
+2. When viewed on mobile devices the hover text was displayed before the span innerHTML was changed resulting in the previously displayed hover text being displayed. This problem was fixed by giving each span a unique id attribute and using these to set the innerHTML of each span in JavaScript.
 3. When the submit and instructions buttons were clicked, focus remained on the button. Hitting enter to close displayed modal called the button function again. This problem was fixed by adding ```.blur();``` to display modal functions to remove focus from the button.
 
 ### Unfixed Bugs
@@ -253,14 +253,14 @@ For more details about forking and cloning a repository, please refer to [GitHub
 ## Code
 [W3 Schools](https://www.w3schools.com/) and lessons from [Code Institute's Full Stack Developer Course](https://codeinstitute.net/full-stack-software-development-diploma/) were frequently referred to in the development of this website.
 
-- The favicon was implemnted using code from Code Institute's "Love Maths" project.
+- The favicon was implemented using code from Code Institute's "Love Maths" project.
 - The modals were created using W3school's [How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp).
 - The colour selection functionality was created using [Change Background Color onclick using JavaScript
 ](https://www.howtocodeschool.com/2021/01/change-background-color-onclick-using-javascript.html#html-code) from How to Code School.
 - The ```getcomputedstyle();``` method was utilised using W3school's page [Window getComputedStyle()](https://www.w3schools.com/JSREF/jsref_getcomputedstyle.asp).
 - The hover text was created using W3school's page [How TO - Display an Element on Hover](https://www.w3schools.com/css/css_tooltip.asp).
 - Elements were positioned centrally on the page using W3school's page [CSS Layout - Horizontal & Vertical Align](https://www.w3schools.com/css/css_align.asp).
-- [Font Awesome docs](https://fontawesome.com/v5/docs/web/other-topics/accessibility) were refered to in order to make the website more accessible to a wider audience.
+- [Font Awesome docs](https://fontawesome.com/v5/docs/web/other-topics/accessibility) were referred to in order to make the website more accessible to a wider audience.
 
 ## Content
 The content of the website was written by Victoria Parkes.
