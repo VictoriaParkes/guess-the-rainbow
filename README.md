@@ -183,7 +183,7 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 ![script.js validation](docs/testing/validator-screenshots/js-validation.png)
 
 ## Lighthouse Auditing
-I frequently used Lighthouse in the Chrome Developer Tools to allow me to test the performance, accessibility, best practices and SEO of the website during the development of the website.
+[PageSpeed Insights](https://pagespeed.web.dev/) was used to generate Lighthouse audit reports to allow testing of the performance, accessibility, best practices and SEO of the website during the development of the website.
 
 Lighthouse audit reports are as follows:
 ### Index - Mobile
